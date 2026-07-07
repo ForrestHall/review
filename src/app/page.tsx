@@ -4,10 +4,12 @@ import { FAQ, homepageFaqs } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { getCompaniesSorted } from "@/data/companies";
 import { comparisons } from "@/data/comparisons";
+import { blogCategories, getRecentBlogPosts } from "@/data/blog";
 import { guides, guideCategories } from "@/data/guides";
 import { SITE } from "@/lib/site";
 
 const companies = getCompaniesSorted();
+const recentPosts = getRecentBlogPosts(3);
 
 const itemListSchema = {
   "@context": "https://schema.org",
@@ -188,6 +190,48 @@ export default function HomePage() {
             className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
           >
             View all comparisons
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* Latest blog posts */}
+      <section className="border-t border-border bg-card">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <h2 className="font-serif text-2xl font-semibold text-foreground">
+            Latest from the Blog
+          </h2>
+          <p className="mt-2 text-muted">
+            Timely tips on buying, claims, and getting the best RV warranty
+            coverage.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {recentPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group rounded-xl border border-border p-5 transition-shadow hover:shadow-md"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wide text-brand">
+                  {blogCategories[post.category]}
+                </span>
+                <h3 className="mt-2 font-serif text-lg font-semibold text-foreground group-hover:text-brand">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted line-clamp-3">
+                  {post.description}
+                </p>
+                <p className="mt-3 text-xs text-muted">
+                  {post.readTime} min read
+                </p>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/blog"
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
+          >
+            Read all blog posts
             <span aria-hidden>→</span>
           </Link>
         </div>

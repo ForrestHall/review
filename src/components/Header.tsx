@@ -4,9 +4,9 @@ import { SITE } from "@/lib/site";
 const navLinks = [
   { href: "/", label: "Best Warranties" },
   { href: "/compare", label: "Compare" },
+  { href: "/blog", label: "Blog" },
   { href: "/guides", label: "Guides" },
   { href: "/how-we-review", label: "How We Review" },
-  { href: "/about", label: "About" },
 ];
 
 export function Header() {

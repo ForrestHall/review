@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/data/blog";
 import { companies } from "@/data/companies";
 import { comparisons } from "@/data/comparisons";
 import { guides } from "@/data/guides";
@@ -6,7 +7,8 @@ import { SITE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    { path: "", priority: 1, lastModified: "2026-03-01" },
+    { path: "", priority: 1, lastModified: "2026-03-08" },
+    { path: "/blog", priority: 0.85, lastModified: "2026-03-08" },
     { path: "/compare", priority: 0.9, lastModified: "2026-03-01" },
     { path: "/guides", priority: 0.8, lastModified: "2026-03-01" },
     { path: "/how-we-review", priority: 0.8, lastModified: "2026-03-01" },
@@ -42,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...reviewPages, ...comparePages, ...guidePages];
+  const blogPages = blogPosts.map((p) => ({
+    url: `${SITE.url}/blog/${p.slug}`,
+    lastModified: new Date(p.updatedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticPages, ...reviewPages, ...comparePages, ...guidePages, ...blogPages];
 }

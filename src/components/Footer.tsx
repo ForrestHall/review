@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { getRecentBlogPosts } from "@/data/blog";
 import { getCompaniesSorted } from "@/data/companies";
 import { comparisons } from "@/data/comparisons";
 import { SITE } from "@/lib/site";
 
 const topCompanies = getCompaniesSorted().slice(0, 6);
+const recentPosts = getRecentBlogPosts(4);
 
 export function Footer() {
   return (
@@ -61,6 +63,34 @@ export function Footer() {
           </div>
 
           <div>
+            <p className="font-semibold text-white">Resources</p>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <Link href="/blog" className="hover:text-white">
+                  Blog
+                </Link>
+              </li>
+              {recentPosts.slice(0, 3).map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/blog/${post.slug}`} className="hover:text-white">
+                    {post.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/guides" className="hover:text-white">
+                  Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/rss.xml" className="hover:text-white">
+                  RSS Feed
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <p className="font-semibold text-white">Company</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
@@ -76,11 +106,6 @@ export function Footer() {
               <li>
                 <Link href="/how-we-review" className="hover:text-white">
                   How We Review
-                </Link>
-              </li>
-              <li>
-                <Link href="/guides" className="hover:text-white">
-                  Guides
                 </Link>
               </li>
               <li>

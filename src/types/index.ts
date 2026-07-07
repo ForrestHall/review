@@ -48,3 +48,17 @@ export type Comparison = {
   rows: { feature: string; a: string; b: string }[];
   sections: { heading: string; content: string[] }[];
 };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  description: string;
+  category: "claims" | "shopping" | "cost" | "rv-types" | "tips";
+  publishedAt: string;
+  updatedAt: string;
+  readTime: number;
+  reviewedBy: string;
+  sections: { heading: string; content: string[] }[];
+  faqs?: { question: string; answer: string }[];
+  relatedLinks?: { href: string; title: string }[];
+};
