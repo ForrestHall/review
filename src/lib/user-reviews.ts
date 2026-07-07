@@ -3,7 +3,8 @@ import path from "path";
 import { randomUUID } from "crypto";
 import type { CreateUserReviewInput, UserReview } from "@/types/user-review";
 
-const DATA_DIR = path.join(process.cwd(), "data");
+const DATA_DIR =
+  process.env.DATA_DIR?.trim() || path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "user-reviews.json");
 
 function ensureStore(): UserReview[] {
