@@ -16,6 +16,7 @@ export type CompanyReview = {
   eligibility: string;
   website?: string;
   phone?: string;
+  ctaUrl?: string;
   ctaLabel?: string;
   publishedAt: string;
   updatedAt: string;

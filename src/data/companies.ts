@@ -43,7 +43,8 @@ export const companies: CompanyReview[] = [
     coverageType: "Extended Service Contract",
     deductible: "$0–$1,000",
     eligibility: "Up to 20 years (no inspection for RVs under 20 yrs)",
-    phone: "1-800-555-0123",
+    ctaUrl:
+      "https://www.americasrvwarranty.com/quote/source/rvr/tracking_num/770-727-0028",
     ctaLabel: "Get Quote",
     publishedAt: "2025-10-01",
     updatedAt: "2026-03-01",

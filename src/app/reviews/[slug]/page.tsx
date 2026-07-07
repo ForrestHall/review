@@ -272,13 +272,24 @@ export default async function ReviewPage({ params }: Props) {
             Final Verdict
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{company.verdict}</p>
-          {company.phone && (
+          {company.ctaUrl ? (
             <a
-              href={`tel:${company.phone.replace(/\D/g, "")}`}
+              href={company.ctaUrl}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
               className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
-              {company.ctaLabel ?? "Get a Quote"} — {company.phone}
+              {company.ctaLabel ?? "Get a Quote"}
             </a>
+          ) : (
+            company.phone && (
+              <a
+                href={`tel:${company.phone.replace(/\D/g, "")}`}
+                className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              >
+                {company.ctaLabel ?? "Get a Quote"} — {company.phone}
+              </a>
+            )
           )}
         </section>
 
