@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { comparisons } from "@/data/comparisons";
 import { getCompany } from "@/data/companies";
 import { buildMetadata } from "@/lib/seo";
@@ -12,9 +13,25 @@ export const metadata: Metadata = buildMetadata({
   path: "/compare",
 });
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "RV Extended Warranty Comparisons",
+  description:
+    "Head-to-head comparisons of top RV extended warranty providers.",
+  numberOfItems: comparisons.length,
+  itemListElement: comparisons.map((comparison, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: comparison.title,
+    url: `${SITE.url}/compare/${comparison.slug}`,
+  })),
+};
+
 export default function CompareIndexPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <JsonLd data={itemListSchema} />
       <h1 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
         RV Warranty Comparisons
       </h1>

@@ -49,6 +49,23 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-01",
     updatedAt: "2026-03-01",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is America's RV Warranty legit?",
+        answer:
+          "Yes. America's RV Warranty is a BBB-accredited provider backed by an A-rated insurance company, with an in-house claims department. It earned our highest rating (9.0/10) for 2026 based on claims reputation, coverage flexibility, and customer feedback.",
+      },
+      {
+        question: "How much does America's RV Warranty cost?",
+        answer:
+          "Pricing depends on your RV's type, age, mileage, and coverage level. Deductible options range from $0 to $1,000, which affects the premium. Request a personalized quote to compare against other providers.",
+      },
+      {
+        question: "Where can I get repairs with America's RV Warranty?",
+        answer:
+          "At any licensed repair facility in the US or Canada, plus mobile mechanic support with reimbursement included on all plans — so you can get repairs wherever your travels take you.",
+      },
+    ],
   },
   {
     slug: "good-sam-esp",
@@ -93,6 +110,23 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-05",
     updatedAt: "2026-03-01",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is Good Sam ESP worth it?",
+        answer:
+          "Good Sam ESP is a solid choice for RVers who want insurance-backed coverage from an established brand, especially full-time travelers who value travel expense reimbursement. Review the exclusions carefully — claim denials for rust and pre-existing conditions are the most common complaints.",
+      },
+      {
+        question: "Do I need a Good Sam Club membership for ESP?",
+        answer:
+          "Yes, Good Sam ESP requires a Good Sam Club membership, which adds an annual fee on top of your plan cost. Factor this into price comparisons with providers that have no membership requirement.",
+      },
+      {
+        question: "What states is Good Sam ESP not available in?",
+        answer:
+          "Good Sam ESP is not available in New York and Indiana. Coverage is offered in the other 48 states and Canada.",
+      },
+    ],
   },
   {
     slug: "roamly",
@@ -135,6 +169,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-10",
     updatedAt: "2026-02-15",
     reviewedBy: "jennifer-walsh",
+    faqs: [
+      {
+        question: "Is Roamly a warranty company?",
+        answer:
+          "No — Roamly is a broker that connects RV owners with warranty providers. Your actual coverage and claims are handled by whichever administrator backs the plan you buy, so always ask who administers the policy before purchasing.",
+      },
+      {
+        question: "Who handles claims for Roamly plans?",
+        answer:
+          "Claims go through the underlying plan administrator, not Roamly itself. Claim experience varies by provider, which is why we recommend verifying the administrator's reputation before you buy.",
+      },
+    ],
   },
   {
     slug: "wholesale-warranties",
@@ -177,6 +223,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-12",
     updatedAt: "2026-02-20",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is Wholesale Warranties legit?",
+        answer:
+          "Yes. Wholesale Warranties is a direct provider with a user-friendly online quote system and competitive pricing. The main tradeoff is claims speed — customer reviews frequently mention slow claim approvals.",
+      },
+      {
+        question: "How long do Wholesale Warranties claims take?",
+        answer:
+          "Claim processing times vary, but slower-than-average approvals are the most common complaint in customer reviews. If fast claims matter to you, compare against providers with in-house claims departments.",
+      },
+    ],
   },
   {
     slug: "rv-complete",
@@ -217,6 +275,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-15",
     updatedAt: "2026-01-20",
     reviewedBy: "jennifer-walsh",
+    faqs: [
+      {
+        question: "Is RV Complete a real warranty?",
+        answer:
+          "RV Complete operates primarily as a dispatch and repair-coordination service, not a traditional extended warranty. Owner reviews frequently report that expected repairs weren't covered. Read the contract carefully so you understand exactly what you're buying.",
+      },
+      {
+        question: "Why do RV Complete reviews mention claim denials?",
+        answer:
+          "Because the service's coverage scope is much narrower than a full service contract, many owners discover their repair isn't covered when they file. If you want true mechanical breakdown coverage, compare full extended service contracts instead.",
+      },
+    ],
   },
   {
     slug: "warranty-direct-protect",
@@ -258,6 +328,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-10-18",
     updatedAt: "2026-02-01",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is Warranty Direct Protect the same as Eagle Vision?",
+        answer:
+          "Yes — Warranty Direct Protect was formerly known as Eagle Vision. The rebranded company has improved its customer service track record, though premiums remain on the higher end.",
+      },
+      {
+        question: "Is Warranty Direct Protect worth the higher premiums?",
+        answer:
+          "It can be, if you value comprehensive coverage tiers and are quoted a competitive rate. We recommend comparing quotes against our higher-rated providers before committing, since similar coverage is often available for less.",
+      },
+    ],
   },
   {
     slug: "easycare-rv",
@@ -300,6 +382,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-11-01",
     updatedAt: "2026-03-01",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Can I buy EasyCare RV coverage outside a dealership?",
+        answer:
+          "EasyCare RV is typically sold through dealerships, which limits your ability to comparison shop. If your dealer quotes EasyCare, compare the price against direct providers before signing — dealer-sold contracts often carry markup.",
+      },
+      {
+        question: "What does EasyCare RV cover?",
+        answer:
+          "EasyCare covers major coach and drivetrain components, but customer reviews cite numerous exclusions in the contract fine print. Request the full contract from your dealer and read the exclusion list before purchasing.",
+      },
+    ],
   },
   {
     slug: "american-guardian",
@@ -342,6 +436,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-11-05",
     updatedAt: "2026-02-28",
     reviewedBy: "jennifer-walsh",
+    faqs: [
+      {
+        question: "Is American Guardian a good budget RV warranty?",
+        answer:
+          "American Guardian's premiums are lower than top-tier providers, which appeals to budget-conscious owners. The tradeoff is claim risk — denials and slow responses appear frequently in customer reviews, so weigh the savings against the reliability gap.",
+      },
+      {
+        question: "Who backs American Guardian warranties?",
+        answer:
+          "American Guardian is less transparent about its administrator and insurance backing than top-rated competitors. Ask for the insurer's name and rating before buying — we recommend only purchasing plans backed by an insurer rated B or higher.",
+      },
+    ],
   },
   {
     slug: "warranty-forever-rv",
@@ -384,6 +490,18 @@ export const companies: CompanyReview[] = [
     publishedAt: "2025-11-08",
     updatedAt: "2026-03-01",
     reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is Warranty Forever RV really a lifetime warranty?",
+        answer:
+          "The 'lifetime' label comes with significant restrictions. Coverage depends on strict maintenance documentation requirements, and missed or undocumented service is a common reason claims get denied. Read every maintenance requirement before relying on the lifetime promise.",
+      },
+      {
+        question: "What voids a Warranty Forever RV warranty?",
+        answer:
+          "Missing required maintenance intervals, failing to keep service records, and not following the program's inspection schedule are the most common ways owners lose coverage. Keep every receipt and follow the schedule exactly if you enroll.",
+      },
+    ],
   },
 ];
 

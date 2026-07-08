@@ -21,6 +21,7 @@ export type CompanyReview = {
   publishedAt: string;
   updatedAt: string;
   reviewedBy: string;
+  faqs?: { question: string; answer: string }[];
 };
 
 export type Guide = {

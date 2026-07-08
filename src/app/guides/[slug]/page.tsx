@@ -11,7 +11,7 @@ import {
   guides,
   guideCategories,
 } from "@/data/guides";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -67,7 +67,16 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={articleSchema} />
+      <JsonLd
+        data={[
+          articleSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Guides", path: "/guides" },
+            { name: guide.title, path: `/guides/${guide.slug}` },
+          ]),
+        ]}
+      />
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <Breadcrumbs

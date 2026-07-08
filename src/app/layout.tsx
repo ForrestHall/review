@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -17,11 +18,28 @@ const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = buildMetadata({
+const baseMetadata = buildMetadata({
   title: "Best RV Extended Warranty Reviews & Comparisons",
   description: SITE.description,
   path: "/",
 });
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  alternates: {
+    ...baseMetadata.alternates,
+    types: {
+      "application/rss+xml": `${SITE.url}/blog/rss.xml`,
+    },
+  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
+};
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -45,6 +63,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${sourceSerif.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <JsonLd data={organizationSchema} />
+        <Analytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

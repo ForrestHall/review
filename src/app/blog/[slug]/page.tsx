@@ -13,7 +13,7 @@ import {
   getBlogPost,
   getBlogPostsSorted,
 } from "@/data/blog";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -69,6 +69,14 @@ export default async function BlogPostPage({ params }: Props) {
       mainEntityOfPage: `${SITE.url}/blog/${post.slug}`,
     },
   ];
+
+  schemas.push(
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title, path: `/blog/${post.slug}` },
+    ])
+  );
 
   if (post.faqs?.length) {
     schemas.push({

@@ -51,3 +51,18 @@ export function jsonLdScript(data: Record<string, unknown> | Record<string, unkn
     __html: JSON.stringify(Array.isArray(data) ? data : data),
   };
 }
+
+export function breadcrumbSchema(
+  items: { name: string; path?: string }[]
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      ...(item.path ? { item: `${SITE.url}${item.path}` } : {}),
+    })),
+  };
+}

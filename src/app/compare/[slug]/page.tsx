@@ -8,7 +8,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { comparisons, getComparison } from "@/data/comparisons";
 import { getCompany } from "@/data/companies";
 import { getAuthorOrDefault } from "@/data/authors";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -65,7 +65,16 @@ export default async function ComparePage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={schema} />
+      <JsonLd
+        data={[
+          schema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Compare", path: "/compare" },
+            { name: comparison.title, path: `/compare/${comparison.slug}` },
+          ]),
+        ]}
+      />
 
       <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
         <Breadcrumbs

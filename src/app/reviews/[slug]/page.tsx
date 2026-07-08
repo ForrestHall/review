@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AuthorByline } from "@/components/AuthorByline";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { Rating } from "@/components/Rating";
 import { RelatedLinks } from "@/components/RelatedLinks";
@@ -17,6 +18,9 @@ import { getUserReviewStats, getUserReviews } from "@/lib/user-reviews";
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+// Regenerate hourly so owner-review aggregate ratings stay current in schema.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   return companies.map((c) => ({ slug: c.slug }));
@@ -102,9 +106,54 @@ export default async function ReviewPage({ params }: Props) {
     ],
   };
 
+  const schemas: Record<string, unknown>[] = [reviewSchema, breadcrumbSchema];
+
+  if (userReviewStats.count > 0) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: `${company.name} RV Extended Warranty`,
+      description: company.summary,
+      brand: { "@type": "Brand", name: company.name },
+      url: `${SITE.url}/reviews/${company.slug}`,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: userReviewStats.average,
+        reviewCount: userReviewStats.count,
+        bestRating: 10,
+        worstRating: 1,
+      },
+      review: userReviews.slice(0, 5).map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.authorName },
+        datePublished: r.createdAt.slice(0, 10),
+        reviewBody: r.body,
+        ...(r.title ? { name: r.title } : {}),
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: r.rating,
+          bestRating: 10,
+          worstRating: 1,
+        },
+      })),
+    });
+  }
+
+  if (company.faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: company.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+
   return (
     <>
-      <JsonLd data={[reviewSchema, breadcrumbSchema]} />
+      <JsonLd data={schemas} />
 
       <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
         <Breadcrumbs
@@ -265,6 +314,10 @@ export default async function ReviewPage({ params }: Props) {
           initialReviews={userReviews}
           averageRating={userReviewStats.average}
         />
+
+        {company.faqs && company.faqs.length > 0 && (
+          <FAQ items={company.faqs} />
+        )}
 
         {/* Verdict */}
         <section className="mt-10 rounded-xl border border-brand/20 bg-brand/5 p-6">
