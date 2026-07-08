@@ -7,7 +7,9 @@ function resolveSiteUrl() {
     return `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`;
   }
 
-  return "https://rvwarrantyreview.com";
+  // www is the primary host: GoDaddy can't CNAME the apex to Railway, so the
+  // apex only forwards the root path. All canonical URLs must use www.
+  return "https://www.rvwarrantyreview.com";
 }
 
 function resolveDomain(url: string) {

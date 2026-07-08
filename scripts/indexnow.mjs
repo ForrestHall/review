@@ -5,7 +5,7 @@
 //
 // Optionally pass specific URLs: node scripts/indexnow.mjs https://... https://...
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rvwarrantyreview.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.rvwarrantyreview.com";
 const KEY = "19c63a31adacd1da1a1c5f7184958122";
 
 async function getSitemapUrls() {

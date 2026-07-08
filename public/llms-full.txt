@@ -1,8 +1,8 @@
 # RV Warranty Review — Full Index
 
-> Extended index for AI systems and researchers. For a concise overview, see https://rvwarrantyreview.com/llms.txt
+> Extended index for AI systems and researchers. For a concise overview, see https://www.rvwarrantyreview.com/llms.txt
 
-Site: https://rvwarrantyreview.com
+Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
 Last updated: 2026-03-01
 
@@ -39,45 +39,45 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 
 | Page | URL | Description |
 |------|-----|-------------|
-| Homepage | https://rvwarrantyreview.com/ | Best RV extended warranty companies ranked for 2026 |
-| Guides index | https://rvwarrantyreview.com/guides | All educational articles |
-| Comparisons | https://rvwarrantyreview.com/compare | Head-to-head provider comparisons |
-| Editorial Team | https://rvwarrantyreview.com/editorial-team | Authors and credentials |
-| How We Review | https://rvwarrantyreview.com/how-we-review | Editorial methodology + secret shopping |
-| About | https://rvwarrantyreview.com/about | Site mission and contact |
-| Privacy Policy | https://rvwarrantyreview.com/privacy | Data collection and cookies |
-| Affiliate Disclosure | https://rvwarrantyreview.com/disclosure | FTC affiliate compliance |
+| Homepage | https://www.rvwarrantyreview.com/ | Best RV extended warranty companies ranked for 2026 |
+| Guides index | https://www.rvwarrantyreview.com/guides | All educational articles |
+| Comparisons | https://www.rvwarrantyreview.com/compare | Head-to-head provider comparisons |
+| Editorial Team | https://www.rvwarrantyreview.com/editorial-team | Authors and credentials |
+| How We Review | https://www.rvwarrantyreview.com/how-we-review | Editorial methodology + secret shopping |
+| About | https://www.rvwarrantyreview.com/about | Site mission and contact |
+| Privacy Policy | https://www.rvwarrantyreview.com/privacy | Data collection and cookies |
+| Affiliate Disclosure | https://www.rvwarrantyreview.com/disclosure | FTC affiliate compliance |
 
 ### Company Reviews (2026 Rankings)
 
 | Rank | Company | Rating | URL |
 |------|---------|--------|-----|
-| 1 | America's RV Warranty | 9.0/10 | https://rvwarrantyreview.com/reviews/americas-rv-warranty |
-| 2 | Good Sam ESP | 8.0/10 | https://rvwarrantyreview.com/reviews/good-sam-esp |
-| 3 | Roamly | 7.6/10 | https://rvwarrantyreview.com/reviews/roamly |
-| 4 | Wholesale Warranties | 7.0/10 | https://rvwarrantyreview.com/reviews/wholesale-warranties |
-| 5 | RV Complete | 6.0/10 | https://rvwarrantyreview.com/reviews/rv-complete |
-| 6 | Warranty Direct Protect | 5.5/10 | https://rvwarrantyreview.com/reviews/warranty-direct-protect |
-| 7 | EasyCare RV | 5.0/10 | https://rvwarrantyreview.com/reviews/easycare-rv |
-| 8 | American Guardian | 4.5/10 | https://rvwarrantyreview.com/reviews/american-guardian |
-| 9 | Warranty Forever RV | 4.0/10 | https://rvwarrantyreview.com/reviews/warranty-forever-rv |
+| 1 | America's RV Warranty | 9.0/10 | https://www.rvwarrantyreview.com/reviews/americas-rv-warranty |
+| 2 | Good Sam ESP | 8.0/10 | https://www.rvwarrantyreview.com/reviews/good-sam-esp |
+| 3 | Roamly | 7.6/10 | https://www.rvwarrantyreview.com/reviews/roamly |
+| 4 | Wholesale Warranties | 7.0/10 | https://www.rvwarrantyreview.com/reviews/wholesale-warranties |
+| 5 | RV Complete | 6.0/10 | https://www.rvwarrantyreview.com/reviews/rv-complete |
+| 6 | Warranty Direct Protect | 5.5/10 | https://www.rvwarrantyreview.com/reviews/warranty-direct-protect |
+| 7 | EasyCare RV | 5.0/10 | https://www.rvwarrantyreview.com/reviews/easycare-rv |
+| 8 | American Guardian | 4.5/10 | https://www.rvwarrantyreview.com/reviews/american-guardian |
+| 9 | Warranty Forever RV | 4.0/10 | https://www.rvwarrantyreview.com/reviews/warranty-forever-rv |
 
 ### Head-to-Head Comparisons
 
 | Comparison | URL |
 |------------|-----|
-| America's RV Warranty vs Good Sam ESP | https://rvwarrantyreview.com/compare/americas-rv-warranty-vs-good-sam-esp |
-| Good Sam ESP vs Wholesale Warranties | https://rvwarrantyreview.com/compare/good-sam-esp-vs-wholesale-warranties |
-| America's RV Warranty vs Wholesale Warranties | https://rvwarrantyreview.com/compare/americas-rv-warranty-vs-wholesale-warranties |
-| Roamly vs Wholesale Warranties | https://rvwarrantyreview.com/compare/roamly-vs-wholesale-warranties |
-| Good Sam ESP vs Roamly | https://rvwarrantyreview.com/compare/good-sam-esp-vs-roamly |
+| America's RV Warranty vs Good Sam ESP | https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-good-sam-esp |
+| Good Sam ESP vs Wholesale Warranties | https://www.rvwarrantyreview.com/compare/good-sam-esp-vs-wholesale-warranties |
+| America's RV Warranty vs Wholesale Warranties | https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-wholesale-warranties |
+| Roamly vs Wholesale Warranties | https://www.rvwarrantyreview.com/compare/roamly-vs-wholesale-warranties |
+| Good Sam ESP vs Roamly | https://www.rvwarrantyreview.com/compare/good-sam-esp-vs-roamly |
 
 ### Editorial Team
 
 | Name | Role | URL |
 |------|------|-----|
-| Michael Torres | Lead RV Warranty Analyst | https://rvwarrantyreview.com/editorial-team#michael-torres |
-| Jennifer Walsh | Senior Research Editor | https://rvwarrantyreview.com/editorial-team#jennifer-walsh |
+| Michael Torres | Lead RV Warranty Analyst | https://www.rvwarrantyreview.com/editorial-team#michael-torres |
+| Jennifer Walsh | Senior Research Editor | https://www.rvwarrantyreview.com/editorial-team#jennifer-walsh |
 
 #### America's RV Warranty (Best Overall 2026)
 
@@ -124,12 +124,12 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 
 | Title | URL | Category | Read Time |
 |-------|-----|----------|-----------|
-| What Is an RV Extended Warranty? | https://rvwarrantyreview.com/guides/what-is-an-rv-extended-warranty | RV Warranty 101 | 8 min |
-| Exclusionary vs. Named Component Coverage | https://rvwarrantyreview.com/guides/exclusionary-vs-named-component-coverage | Coverage Details | 6 min |
-| How to Shop for an RV Warranty | https://rvwarrantyreview.com/guides/how-to-shop-for-an-rv-warranty | Shopping Guides | 10 min |
-| How Much Do RV Warranties Cost? | https://rvwarrantyreview.com/guides/how-much-do-rv-warranties-cost | Pricing & Value | 7 min |
-| How We Choose the Best Companies | https://rvwarrantyreview.com/guides/how-we-choose-the-best-companies | Shopping Guides | 5 min |
-| Is an Extended RV Warranty Worth It? | https://rvwarrantyreview.com/guides/is-an-extended-rv-warranty-worth-it | RV Warranty 101 | 9 min |
+| What Is an RV Extended Warranty? | https://www.rvwarrantyreview.com/guides/what-is-an-rv-extended-warranty | RV Warranty 101 | 8 min |
+| Exclusionary vs. Named Component Coverage | https://www.rvwarrantyreview.com/guides/exclusionary-vs-named-component-coverage | Coverage Details | 6 min |
+| How to Shop for an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-shop-for-an-rv-warranty | Shopping Guides | 10 min |
+| How Much Do RV Warranties Cost? | https://www.rvwarrantyreview.com/guides/how-much-do-rv-warranties-cost | Pricing & Value | 7 min |
+| How We Choose the Best Companies | https://www.rvwarrantyreview.com/guides/how-we-choose-the-best-companies | Shopping Guides | 5 min |
+| Is an Extended RV Warranty Worth It? | https://www.rvwarrantyreview.com/guides/is-an-extended-rv-warranty-worth-it | RV Warranty 101 | 9 min |
 
 ---
 
@@ -173,8 +173,8 @@ An RV extended warranty is a vehicle service contract that covers repair costs w
 
 Pages include JSON-LD schema: WebSite, ItemList, FAQPage, Review, Article, BreadcrumbList.
 
-Sitemap: https://rvwarrantyreview.com/sitemap.xml
-Robots: https://rvwarrantyreview.com/robots.txt
+Sitemap: https://www.rvwarrantyreview.com/sitemap.xml
+Robots: https://www.rvwarrantyreview.com/robots.txt
 
 ---
 

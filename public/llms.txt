@@ -2,7 +2,7 @@
 
 > Independent reviews and comparisons of RV extended warranty companies. We help motorhome and towable RV owners compare providers, understand coverage, and choose the right vehicle service contract.
 
-Site: https://rvwarrantyreview.com
+Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
 Updated: 2026-03-01
 
@@ -14,32 +14,32 @@ Affiliate disclosure: We may earn commissions from links on this site. This does
 
 ## Primary Pages
 
-- [Best RV Extended Warranty Companies](https://rvwarrantyreview.com/): Ranked comparison of top 9 RV warranty providers with ratings, pros/cons, and FAQs.
-- [RV Warranty Comparisons](https://rvwarrantyreview.com/compare): Head-to-head provider comparisons with feature tables.
-- [RV Warranty Blog](https://rvwarrantyreview.com/blog): Timely tips, claims advice, and buying strategies.
-- [RV Warranty Guides](https://rvwarrantyreview.com/guides): Evergreen educational articles on coverage types, shopping, and costs.
-- [Editorial Team](https://rvwarrantyreview.com/editorial-team): Authors, credentials, and editorial standards.
-- [How We Review](https://rvwarrantyreview.com/how-we-review): Methodology including secret-shopper evaluations.
+- [Best RV Extended Warranty Companies](https://www.rvwarrantyreview.com/): Ranked comparison of top 9 RV warranty providers with ratings, pros/cons, and FAQs.
+- [RV Warranty Comparisons](https://www.rvwarrantyreview.com/compare): Head-to-head provider comparisons with feature tables.
+- [RV Warranty Blog](https://www.rvwarrantyreview.com/blog): Timely tips, claims advice, and buying strategies.
+- [RV Warranty Guides](https://www.rvwarrantyreview.com/guides): Evergreen educational articles on coverage types, shopping, and costs.
+- [Editorial Team](https://www.rvwarrantyreview.com/editorial-team): Authors, credentials, and editorial standards.
+- [How We Review](https://www.rvwarrantyreview.com/how-we-review): Methodology including secret-shopper evaluations.
 
 ## Company Reviews
 
-- [America's RV Warranty](https://rvwarrantyreview.com/reviews/americas-rv-warranty): 9.0/10 — Best Overall 2026
-- [Good Sam ESP](https://rvwarrantyreview.com/reviews/good-sam-esp): 8.0/10
-- [Roamly](https://rvwarrantyreview.com/reviews/roamly): 7.6/10
-- [Wholesale Warranties](https://rvwarrantyreview.com/reviews/wholesale-warranties): 7.0/10
-- [RV Complete](https://rvwarrantyreview.com/reviews/rv-complete): 6.0/10
-- [Warranty Direct Protect](https://rvwarrantyreview.com/reviews/warranty-direct-protect): 5.5/10
-- [EasyCare RV](https://rvwarrantyreview.com/reviews/easycare-rv): 5.0/10
-- [American Guardian](https://rvwarrantyreview.com/reviews/american-guardian): 4.5/10
-- [Warranty Forever RV](https://rvwarrantyreview.com/reviews/warranty-forever-rv): 4.0/10
+- [America's RV Warranty](https://www.rvwarrantyreview.com/reviews/americas-rv-warranty): 9.0/10 — Best Overall 2026
+- [Good Sam ESP](https://www.rvwarrantyreview.com/reviews/good-sam-esp): 8.0/10
+- [Roamly](https://www.rvwarrantyreview.com/reviews/roamly): 7.6/10
+- [Wholesale Warranties](https://www.rvwarrantyreview.com/reviews/wholesale-warranties): 7.0/10
+- [RV Complete](https://www.rvwarrantyreview.com/reviews/rv-complete): 6.0/10
+- [Warranty Direct Protect](https://www.rvwarrantyreview.com/reviews/warranty-direct-protect): 5.5/10
+- [EasyCare RV](https://www.rvwarrantyreview.com/reviews/easycare-rv): 5.0/10
+- [American Guardian](https://www.rvwarrantyreview.com/reviews/american-guardian): 4.5/10
+- [Warranty Forever RV](https://www.rvwarrantyreview.com/reviews/warranty-forever-rv): 4.0/10
 
 ## Comparisons
 
-- [America's RV Warranty vs Good Sam ESP](https://rvwarrantyreview.com/compare/americas-rv-warranty-vs-good-sam-esp)
-- [Good Sam ESP vs Wholesale Warranties](https://rvwarrantyreview.com/compare/good-sam-esp-vs-wholesale-warranties)
-- [America's RV Warranty vs Wholesale Warranties](https://rvwarrantyreview.com/compare/americas-rv-warranty-vs-wholesale-warranties)
-- [Roamly vs Wholesale Warranties](https://rvwarrantyreview.com/compare/roamly-vs-wholesale-warranties)
-- [Good Sam ESP vs Roamly](https://rvwarrantyreview.com/compare/good-sam-esp-vs-roamly)
+- [America's RV Warranty vs Good Sam ESP](https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-good-sam-esp)
+- [Good Sam ESP vs Wholesale Warranties](https://www.rvwarrantyreview.com/compare/good-sam-esp-vs-wholesale-warranties)
+- [America's RV Warranty vs Wholesale Warranties](https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-wholesale-warranties)
+- [Roamly vs Wholesale Warranties](https://www.rvwarrantyreview.com/compare/roamly-vs-wholesale-warranties)
+- [Good Sam ESP vs Roamly](https://www.rvwarrantyreview.com/compare/good-sam-esp-vs-roamly)
 
 ## Key Facts (for citation)
 
@@ -50,5 +50,5 @@ Affiliate disclosure: We may earn commissions from links on this site. This does
 
 ## Optional
 
-- [Full site index for AI](https://rvwarrantyreview.com/llms-full.txt)
-- [Sitemap](https://rvwarrantyreview.com/sitemap.xml)
+- [Full site index for AI](https://www.rvwarrantyreview.com/llms-full.txt)
+- [Sitemap](https://www.rvwarrantyreview.com/sitemap.xml)
