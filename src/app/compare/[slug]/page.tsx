@@ -178,6 +178,16 @@ export default async function ComparePage({ params }: Props) {
         </section>
 
         <RelatedLinks
+          title="Helpful Guides"
+          links={[
+            { href: "/guides/how-much-do-rv-warranties-cost", title: "How Much Do RV Warranties Cost?" },
+            { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+            { href: "/guides/how-to-cancel-an-rv-warranty", title: "How to Cancel an RV Warranty" },
+            { href: "/guides/is-an-extended-rv-warranty-worth-it", title: "Is an Extended RV Warranty Worth It?" },
+          ]}
+        />
+
+        <RelatedLinks
           title="More Comparisons"
           links={comparisons
             .filter((c) => c.slug !== comparison.slug)

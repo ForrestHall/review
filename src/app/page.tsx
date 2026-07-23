@@ -116,8 +116,8 @@ export default function HomePage() {
                 label: "Coverage Details",
               },
               {
-                href: "/guides/exclusionary-vs-named-component-coverage",
-                label: "Types of Warranties",
+                href: "/guides/how-much-do-rv-warranties-cost",
+                label: "Warranty Costs",
               },
               {
                 href: "/guides/how-to-shop-for-an-rv-warranty",

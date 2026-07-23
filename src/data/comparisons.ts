@@ -181,6 +181,95 @@ export const comparisons: Comparison[] = [
       },
     ],
   },
+  {
+    slug: "americas-rv-warranty-vs-roamly",
+    title: "America's RV Warranty vs Roamly",
+    description:
+      "America's RV Warranty vs Roamly — direct in-house claims and mobile repair support vs a broker platform that quotes multiple providers.",
+    companyA: "americas-rv-warranty",
+    companyB: "roamly",
+    winner: "americas-rv-warranty",
+    verdict:
+      "America's RV Warranty is the better choice for most owners who want predictable claims handling and mobile mechanic support. Roamly is useful for fast comparison shopping, but you're buying through a broker — always verify the underlying administrator.",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    reviewedBy: "michael-torres",
+    rows: [
+      { feature: "Our Rating", a: "9.0/10", b: "7.6/10" },
+      { feature: "Coverage Type", a: "Extended Service Contract", b: "Broker / Multiple Providers" },
+      { feature: "Claims Handling", a: "In-house, U.S. based", b: "Varies by partner administrator" },
+      { feature: "Mobile Mechanic", a: "Included (up to $500)", b: "Depends on underlying plan" },
+      { feature: "Insurance Backing", a: "A-rated insurer", b: "Varies by provider" },
+      { feature: "Deductible", a: "$0–$1,000", b: "Varies by plan" },
+      { feature: "Eligibility", a: "Up to 20 years", b: "Varies by provider" },
+      { feature: "Best For", a: "Owners who want one accountable provider", b: "Shoppers comparing multiple quotes online" },
+    ],
+    sections: [
+      {
+        heading: "Direct Provider vs Broker",
+        content: [
+          "America's RV Warranty sells and administers its own vehicle service contracts with an in-house claims team. Roamly is a broker/marketplace: you may get a convenient quote flow, but claims quality depends on whichever partner backs the plan.",
+          "If accountability matters when something breaks on the road, a direct provider with strong reviews usually beats a broker handoff.",
+        ],
+      },
+      {
+        heading: "Claims and Roadside Reality",
+        content: [
+          "ARW's mobile mechanic reimbursement and consistent claims feedback are major advantages for full-timers and Class A owners. With Roamly, ask every time: Who is the administrator? Who pays the shop? What is the deductible?",
+        ],
+      },
+      {
+        heading: "Who Should Choose Which?",
+        content: [
+          "Choose America's RV Warranty if you want our top-rated overall provider with clear claims ownership. Use Roamly if you want to browse options quickly — then verify the underlying plan against ARW and Good Sam before you buy.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "americas-rv-warranty-vs-warranty-direct-protect",
+    title: "America's RV Warranty vs Warranty Direct Protect",
+    description:
+      "America's RV Warranty vs Warranty Direct Protect (formerly Eagle Vision) — compare ratings, premiums, claims support, and overall value.",
+    companyA: "americas-rv-warranty",
+    companyB: "warranty-direct-protect",
+    winner: "americas-rv-warranty",
+    verdict:
+      "America's RV Warranty wins for most RV owners on claims reputation, mobile mechanic support, and overall value. Warranty Direct Protect can offer comprehensive tiers, but premiums are often steep and brand recognition lags top-rated competitors.",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    reviewedBy: "jennifer-walsh",
+    rows: [
+      { feature: "Our Rating", a: "9.0/10", b: "5.5/10" },
+      { feature: "Coverage Type", a: "Extended Service Contract", b: "Extended Service Contract" },
+      { feature: "Deductible", a: "$0–$1,000", b: "$100–$250" },
+      { feature: "Eligibility", a: "Up to 20 years", b: "Up to 15 years" },
+      { feature: "Mobile Mechanic", a: "Included (up to $500)", b: "Not a standout feature" },
+      { feature: "Claims Department", a: "In-house, U.S. based", b: "Improved but less proven" },
+      { feature: "Pricing", a: "Competitive for coverage level", b: "Often premium-priced" },
+      { feature: "Formerly Known As", a: "—", b: "Eagle Vision" },
+    ],
+    sections: [
+      {
+        heading: "Coverage and Pricing",
+        content: [
+          "Both sell extended service contracts with multiple tiers. Warranty Direct Protect markets comprehensive plans, but our research finds premiums can run high relative to what you get. America's RV Warranty typically delivers stronger value when you factor in mobile repair support and claims feedback.",
+        ],
+      },
+      {
+        heading: "Claims Experience",
+        content: [
+          "ARW scores higher on claims reputation and repair-facility relationships. Warranty Direct Protect has improved customer service since its Eagle Vision days, according to some reviews, but it still trails our top-ranked providers.",
+        ],
+      },
+      {
+        heading: "Who Should Choose Which?",
+        content: [
+          "Choose America's RV Warranty unless a Warranty Direct Protect quote is meaningfully cheaper for identical coverage — and you've read the sample contract. Most shoppers are better served starting with ARW, Good Sam ESP, or Wholesale Warranties for budget quotes.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getComparison(slug: string): Comparison | undefined {

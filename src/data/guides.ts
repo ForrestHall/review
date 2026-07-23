@@ -34,6 +34,11 @@ export const guides: Guide[] = [
         ],
       },
     ],
+    relatedLinks: [
+      { href: "/guides/is-an-extended-rv-warranty-worth-it", title: "Is an Extended RV Warranty Worth It?" },
+      { href: "/blog/rv-warranty-vs-insurance-whats-the-difference", title: "RV Warranty vs Insurance" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+    ],
   },
   {
     slug: "exclusionary-vs-named-component-coverage",
@@ -67,6 +72,11 @@ export const guides: Guide[] = [
           "Always request a sample contract before purchasing. At a glance, most plans look similar — the contract details exactly what's covered and what's excluded.",
         ],
       },
+    ],
+    relatedLinks: [
+      { href: "/guides/what-is-an-rv-extended-warranty", title: "What Is an RV Extended Warranty?" },
+      { href: "/guides/how-much-do-rv-warranties-cost", title: "How Much Do RV Warranties Cost?" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
     ],
   },
   {
@@ -103,6 +113,12 @@ export const guides: Guide[] = [
         ],
       },
     ],
+    relatedLinks: [
+      { href: "/guides/how-much-do-rv-warranties-cost", title: "How Much Do RV Warranties Cost?" },
+      { href: "/blog/dealership-vs-warranty-company-which-is-cheaper", title: "Dealership vs Warranty Company" },
+      { href: "/blog/red-flags-rv-warranty-sales-call", title: "7 Red Flags on Warranty Sales Calls" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
   },
   {
     slug: "how-much-do-rv-warranties-cost",
@@ -137,6 +153,11 @@ export const guides: Guide[] = [
         ],
       },
     ],
+    relatedLinks: [
+      { href: "/guides/rv-warranty-cost-by-rv-type", title: "RV Warranty Cost by RV Type" },
+      { href: "/guides/is-an-extended-rv-warranty-worth-it", title: "Is an Extended RV Warranty Worth It?" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+    ],
   },
   {
     slug: "how-we-choose-the-best-companies",
@@ -167,6 +188,11 @@ export const guides: Guide[] = [
           "Flexible coverage levels, deductible choices, and payment options score higher. We also weigh customer service quality, 24/7 support availability, and real customer reviews from BBB, Google, and RV community forums.",
         ],
       },
+    ],
+    relatedLinks: [
+      { href: "/how-we-review", title: "How We Review (Full Methodology)" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+      { href: "/editorial-team", title: "Editorial Team" },
     ],
   },
   {
@@ -200,6 +226,258 @@ export const guides: Guide[] = [
           "There's no universal answer — it depends on your RV's age, your usage patterns, your financial cushion, and the specific plan you're considering.",
           "Compare at least three providers, read sample contracts, and check claims reviews before committing. The best warranty is one you'll actually be able to use when something breaks.",
         ],
+      },
+    ],
+    relatedLinks: [
+      { href: "/guides/how-much-do-rv-warranties-cost", title: "How Much Do RV Warranties Cost?" },
+      { href: "/guides/how-to-cancel-an-rv-warranty", title: "How to Cancel an RV Warranty" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+  },
+  {
+    slug: "how-to-cancel-an-rv-warranty",
+    title: "How to Cancel an RV Warranty",
+    description:
+      "Step-by-step guide to canceling an RV extended warranty, getting a prorated refund, and avoiding common cancellation mistakes.",
+    category: "shopping",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    readTime: 9,
+    reviewedBy: "jennifer-walsh",
+    relatedLinks: [
+      { href: "/guides/how-to-transfer-an-rv-warranty", title: "How to Transfer an RV Warranty" },
+      { href: "/guides/is-an-extended-rv-warranty-worth-it", title: "Is an Extended RV Warranty Worth It?" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Can You Cancel an RV Extended Warranty?",
+        content: [
+          "Yes. Most RV vehicle service contracts and mechanical breakdown insurance plans can be canceled, often with a prorated refund of unused premium. Cancellation terms live in your contract — look for sections titled \"Cancellation,\" \"Refund,\" or \"Termination.\"",
+          "Federal and state rules vary. Some states require a full refund within a cooling-off period (often 30–60 days) if no claims have been paid. After that window, refunds are typically prorated minus claims paid and an administrative fee.",
+        ],
+      },
+      {
+        heading: "Step 1: Read Your Contract Before You Call",
+        content: [
+          "Locate your full contract PDF or paper booklet. Note the administrator name, policy number, purchase date, term length, and any cancellation fee. Confirm whether claims already paid will be deducted from your refund.",
+          "If you financed the warranty into your RV loan, canceling may not automatically reduce your loan balance — you may need to contact both the warranty administrator and your lender.",
+        ],
+      },
+      {
+        heading: "Step 2: Request Cancellation in Writing",
+        content: [
+          "Call the administrator's customer service line, then follow up with a written cancellation request by email or certified mail. Include your full name, policy number, VIN, mailing address, and a clear statement that you want to cancel effective immediately.",
+          "Ask for written confirmation of the cancellation date, refund amount, and expected timeline. Keep copies of every email and letter.",
+        ],
+      },
+      {
+        heading: "Step 3: Calculate Your Expected Refund",
+        content: [
+          "A typical formula: unused months ÷ total months × premium paid, minus claims paid, minus a cancellation fee (often $50–$100). Example: You paid $4,000 for 60 months, cancel after 12 months with no claims and a $75 fee — refund ≈ (48/60 × $4,000) − $75 = $3,125.",
+          "Finance cancellation may work differently: some lenders rebates the unused premium back to the loan. Ask for a written payoff or credit confirmation.",
+        ],
+      },
+      {
+        heading: "Common Reasons Owners Cancel",
+        content: [
+          "Selling the RV without transferring the plan, switching to a better provider, discovering the plan excludes what they need, or deciding to self-insure after building an emergency fund. Canceling to \"start over\" with a competitor is common — just verify the new provider accepts your RV's age and mileage before you cancel the old one.",
+        ],
+      },
+      {
+        heading: "Mistakes That Cost Refunds",
+        content: [
+          "Waiting until after the cooling-off period without checking refund math. Assuming verbal cancellation is enough. Forgetting to cancel when the RV is totaled and insurance pays out. Selling the RV without transferring or canceling — leaving the plan orphaned and refund rights unclear.",
+          "If the administrator stalls, escalate to a supervisor. For insurance-backed or MBI products, your state insurance department can help. BBB complaints also get attention from accredited providers.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How long does an RV warranty refund take?",
+        answer:
+          "Most administrators process refunds within 30–60 days after receiving a complete written cancellation request. Financed plans may take longer if the lender must apply a credit to your loan.",
+      },
+      {
+        question: "Do I get a full refund if I cancel within 30 days?",
+        answer:
+          "Often yes if no claims have been paid — many contracts include a short cooling-off period. Always confirm the exact window and conditions in your contract, because they vary by provider and state.",
+      },
+      {
+        question: "Can I cancel if I've already filed a claim?",
+        answer:
+          "Usually yes, but the amount paid on claims is typically deducted from any refund. If claims exceed remaining unused premium, you may owe nothing further but receive little or no refund.",
+      },
+      {
+        question: "Should I cancel before buying a new warranty?",
+        answer:
+          "Get the new quote and confirmation of eligibility first. Canceling too early can leave you uncovered if the new provider declines your RV or requires a waiting period.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-transfer-an-rv-warranty",
+    title: "How to Transfer an RV Warranty",
+    description:
+      "How to transfer an RV extended warranty when selling or buying a used RV — fees, paperwork, timelines, and what buyers should verify.",
+    category: "shopping",
+    publishedAt: "2026-07-30",
+    updatedAt: "2026-07-30",
+    readTime: 8,
+    reviewedBy: "michael-torres",
+    relatedLinks: [
+      { href: "/guides/how-to-cancel-an-rv-warranty", title: "How to Cancel an RV Warranty" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+      { href: "/reviews/americas-rv-warranty", title: "America's RV Warranty Review" },
+      { href: "/reviews/good-sam-esp", title: "Good Sam ESP Review" },
+    ],
+    sections: [
+      {
+        heading: "Why Transferability Matters",
+        content: [
+          "A transferable RV warranty can increase resale value and give buyers immediate protection without waiting for a new plan to start. Sellers who advertise \"warranty transfers\" often close faster and with fewer price objections.",
+          "Not every plan transfers free — or at all. Check your contract for transfer eligibility, fees, and deadlines before listing the RV.",
+        ],
+      },
+      {
+        heading: "What Usually Transfers",
+        content: [
+          "Most reputable providers allow a one-time transfer to a private buyer during the original term. America's RV Warranty and Good Sam ESP both advertise free transfers. Some budget providers charge $50–$150 or restrict transfers to the first owner only.",
+          "Transfers typically cover the remaining months and mileage limits. Deductibles and covered components stay the same unless the contract says otherwise.",
+        ],
+      },
+      {
+        heading: "Seller Steps",
+        content: [
+          "Contact the administrator as soon as you have a buyer. Provide the buyer's full name, address, phone, email, sale date, and odometer reading. Submit any required transfer form and fee before the deadline (often 15–30 days after sale).",
+          "Give the buyer a copy of the contract, proof of transfer request, and your maintenance records. Incomplete paperwork is the most common reason transfers fail.",
+        ],
+      },
+      {
+        heading: "Buyer Checklist",
+        content: [
+          "Call the administrator yourself and confirm the plan is active, transferable, and still within term/mileage limits. Ask whether there is a waiting period after transfer and whether any claims on the prior owner's account affect coverage.",
+          "Verify the VIN on the contract matches the RV. Read exclusions — especially for pre-existing conditions — and confirm you understand the deductible and claim process before closing.",
+        ],
+      },
+      {
+        heading: "When Transfer Doesn't Make Sense",
+        content: [
+          "If the remaining term is short, coverage is thin, or the provider has a poor claims reputation, the buyer may prefer a new plan. Compare a transfer against a fresh quote for the same RV.",
+          "Dealerships sometimes sell \"new\" warranties at purchase that replace transferable coverage — don't double-pay. Cancel or transfer first, then decide whether new coverage is needed.",
+        ],
+      },
+      {
+        heading: "Timing Tips for a Smooth Hand-Off",
+        content: [
+          "Start the transfer process before the sale closes when possible. Keep written confirmation that the administrator received the request. Until transfer is confirmed, sellers should not assume they're off the hook for refunds or buyers assume they're covered.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is transferring an RV warranty free?",
+        answer:
+          "It depends on the provider. Top-rated plans like America's RV Warranty and Good Sam ESP often transfer free. Others charge a fee or limit transfers — always check your contract.",
+      },
+      {
+        question: "Can I transfer a warranty to a dealer or wholesaler?",
+        answer:
+          "Many contracts only allow transfer to a private individual buyer, not dealers or auction houses. Confirm with the administrator before assuming the plan moves with a trade-in.",
+      },
+      {
+        question: "How long do I have to transfer after selling?",
+        answer:
+          "Deadlines vary — commonly 15 to 30 days after the sale date. Missing the window can void transfer rights, so submit paperwork promptly.",
+      },
+      {
+        question: "Does a transferred warranty cover pre-existing problems?",
+        answer:
+          "Generally no. Pre-existing condition exclusions still apply. Buyers should inspect the RV carefully and understand that known issues before transfer usually aren't covered.",
+      },
+    ],
+  },
+  {
+    slug: "rv-warranty-cost-by-rv-type",
+    title: "RV Warranty Cost by RV Type",
+    description:
+      "Typical RV extended warranty price ranges for Class A, B, and C motorhomes, travel trailers, fifth wheels, and toy haulers — plus what drives the quote.",
+    category: "cost",
+    publishedAt: "2026-08-06",
+    updatedAt: "2026-08-06",
+    readTime: 10,
+    reviewedBy: "jennifer-walsh",
+    relatedLinks: [
+      { href: "/guides/how-much-do-rv-warranties-cost", title: "How Much Do RV Warranties Cost?" },
+      { href: "/blog/best-rv-warranty-for-class-a-motorhomes", title: "Best Warranty for Class A Motorhomes" },
+      { href: "/blog/best-rv-warranty-for-travel-trailers", title: "Best Warranty for Travel Trailers" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Why RV Type Changes the Price",
+        content: [
+          "Providers price risk by how complex and expensive the RV is to repair. Motorhomes include chassis, engine, and coach systems. Towables skip the drivetrain but still carry high-dollar appliances, slide-outs, and plumbing.",
+          "Age, mileage (or odometer on motorhomes), coverage tier, deductible, and term length still matter — but starting with your RV class helps set realistic expectations before you call for quotes.",
+        ],
+      },
+      {
+        heading: "Class A Motorhomes",
+        content: [
+          "Class A units are usually the most expensive to cover. Comprehensive 5-year exclusionary plans commonly land in the $5,000–$10,000+ range depending on age and chassis. Powertrain-focused plans cost less but leave coach systems exposed.",
+          "Diesel pushers and luxury coaches quote higher than gas Class A's. Mobile mechanic benefits matter more here because towing a Class A is costly.",
+        ],
+      },
+      {
+        heading: "Class B and Class C Motorhomes",
+        content: [
+          "Class B camper vans and Class C coach-on-cutaway chassis typically quote between Class A and towable pricing. Expect roughly $3,000–$7,000 for mid-to-comprehensive multi-year plans on common late-model units.",
+          "Class B vans may emphasize chassis/powertrain coverage plus key living systems. Class C owners often want balanced coach + drivetrain protection for family travel.",
+        ],
+      },
+      {
+        heading: "Travel Trailers",
+        content: [
+          "Travel trailer warranties are coach-focused — no engine or transmission. Typical 5-year mid-level plans often run $1,500–$3,500; comprehensive exclusionary coverage can reach $2,500–$5,000 depending on age and features (multiple slides, residential fridge, etc.).",
+          "Budget named-component plans can start near $1,000 for shorter terms, but read exclusions carefully — cheap plans often skip high-failure items.",
+        ],
+      },
+      {
+        heading: "Fifth Wheels and Toy Haulers",
+        content: [
+          "Fifth wheels price similarly to large travel trailers, often $2,000–$5,500 for solid multi-year coverage. Toy haulers may cost more when garage systems, generators, and fuel stations expand the covered component list.",
+          "Ask whether generator hours, hydraulic systems, and fuel stations are included or optional add-ons — those line items change the quote fast.",
+        ],
+      },
+      {
+        heading: "How to Use These Ranges",
+        content: [
+          "Treat these as 2026 directional estimates, not guarantees. Always get three written quotes with the same deductible and term. Compare annualized cost and claims reputation — not just the monthly payment pitched on a sales call.",
+          "For deeper shopping strategy, see our full cost guide and type-specific \"best warranty\" posts for Class A motorhomes and travel trailers.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why do Class A warranties cost more than travel trailer warranties?",
+        answer:
+          "Class A motorhomes include expensive chassis and powertrain repairs plus large coach systems. Travel trailer plans cover living-area components only, so the insurer's exposure — and your premium — is lower.",
+      },
+      {
+        question: "Does RV age affect warranty cost more than RV type?",
+        answer:
+          "Both matter. An older Class A can quote higher than a newer fifth wheel, and some providers exclude RVs past age or mileage limits entirely. Type sets the baseline; age and mileage fine-tune eligibility and price.",
+      },
+      {
+        question: "Are monthly payments a good way to compare costs?",
+        answer:
+          "No. Compare total contract cost and annualized cost for the same term and deductible. Monthly financing can hide fees and make a more expensive plan look cheaper.",
+      },
+      {
+        question: "Should towable owners buy powertrain coverage?",
+        answer:
+          "Towables don't have a vehicle powertrain. Focus on coach, appliances, slide-outs, and optional tire/wheel or roadside add-ons. Powertrain coverage applies to motorhomes.",
       },
     ],
   },

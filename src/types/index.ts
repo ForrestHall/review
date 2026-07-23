@@ -34,6 +34,8 @@ export type Guide = {
   readTime: number;
   reviewedBy: string;
   sections: { heading: string; content: string[] }[];
+  faqs?: { question: string; answer: string }[];
+  relatedLinks?: { href: string; title: string }[];
 };
 
 export type Comparison = {

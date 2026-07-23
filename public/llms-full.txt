@@ -4,7 +4,7 @@
 
 Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
-Last updated: 2026-03-01
+Last updated: 2026-07-23
 
 ---
 
@@ -71,6 +71,8 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 | America's RV Warranty vs Wholesale Warranties | https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-wholesale-warranties |
 | Roamly vs Wholesale Warranties | https://www.rvwarrantyreview.com/compare/roamly-vs-wholesale-warranties |
 | Good Sam ESP vs Roamly | https://www.rvwarrantyreview.com/compare/good-sam-esp-vs-roamly |
+| America's RV Warranty vs Roamly | https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-roamly |
+| America's RV Warranty vs Warranty Direct Protect | https://www.rvwarrantyreview.com/compare/americas-rv-warranty-vs-warranty-direct-protect |
 
 ### Editorial Team
 
@@ -120,10 +122,23 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 - Standout features: Comprehensive plans, improved customer service
 - Caveat: Premiums can be higher than competitors
 
+### Blog
+
+| Title | URL | Category | Read Time |
+|-------|-----|----------|-----------|
+| Best RV Warranty for Travel Trailers (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-travel-trailers | RV Types | 9 min |
+| Best RV Warranty for Class A Motorhomes (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-class-a-motorhomes | RV Types | 10 min |
+| RV Warranty vs Insurance: What's the Difference? | https://www.rvwarrantyreview.com/blog/rv-warranty-vs-insurance-whats-the-difference | Shopping Tips | 10 min |
+| 7 Red Flags When an RV Warranty Salesperson Calls You | https://www.rvwarrantyreview.com/blog/red-flags-rv-warranty-sales-call | Expert Tips | 7 min |
+| Good Sam ESP Alternatives Worth Considering | https://www.rvwarrantyreview.com/blog/good-sam-esp-alternatives | Shopping Tips | 8 min |
+
 ### Educational Guides
 
 | Title | URL | Category | Read Time |
 |-------|-----|----------|-----------|
+| How to Cancel an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-cancel-an-rv-warranty | Shopping Guides | 9 min |
+| How to Transfer an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-transfer-an-rv-warranty | Shopping Guides | 8 min |
+| RV Warranty Cost by RV Type | https://www.rvwarrantyreview.com/guides/rv-warranty-cost-by-rv-type | Pricing & Value | 10 min |
 | What Is an RV Extended Warranty? | https://www.rvwarrantyreview.com/guides/what-is-an-rv-extended-warranty | RV Warranty 101 | 8 min |
 | Exclusionary vs. Named Component Coverage | https://www.rvwarrantyreview.com/guides/exclusionary-vs-named-component-coverage | Coverage Details | 6 min |
 | How to Shop for an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-shop-for-an-rv-warranty | Shopping Guides | 10 min |
@@ -144,6 +159,7 @@ An RV extended warranty is a vehicle service contract that covers repair costs w
 - **Extended warranty / service contract**: Covers mechanical breakdown (failed AC compressor, transmission repair, refrigerator failure).
 - **RV insurance**: Covers damage from accidents, weather events, theft, and liability.
 - Both may be needed for complete protection.
+- **Full article**: https://www.rvwarrantyreview.com/blog/rv-warranty-vs-insurance-whats-the-difference
 
 ### Coverage types
 

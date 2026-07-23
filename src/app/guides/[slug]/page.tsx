@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AuthorByline } from "@/components/AuthorByline";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { getAuthorOrDefault } from "@/data/authors";
@@ -45,38 +46,51 @@ export default async function GuidePage({ params }: Props) {
     .filter((g) => g.slug !== guide.slug && g.category === guide.category)
     .slice(0, 3);
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: guide.title,
-    description: guide.description,
-    datePublished: guide.publishedAt,
-    dateModified: guide.updatedAt,
-    author: {
-      "@type": "Person",
-      name: author.name,
-      jobTitle: author.role,
-      url: `${SITE.url}/editorial-team#${author.slug}`,
+  const schemas: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: guide.title,
+      description: guide.description,
+      datePublished: guide.publishedAt,
+      dateModified: guide.updatedAt,
+      author: {
+        "@type": "Person",
+        name: author.name,
+        jobTitle: author.role,
+        url: `${SITE.url}/editorial-team#${author.slug}`,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: SITE.name,
+        url: SITE.url,
+      },
     },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE.url,
-    },
-  };
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Guides", path: "/guides" },
+      { name: guide.title, path: `/guides/${guide.slug}` },
+    ]),
+  ];
+
+  if (guide.faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: guide.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
 
   return (
     <>
-      <JsonLd
-        data={[
-          articleSchema,
-          breadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Guides", path: "/guides" },
-            { name: guide.title, path: `/guides/${guide.slug}` },
-          ]),
-        ]}
-      />
+      <JsonLd data={schemas} />
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <Breadcrumbs
@@ -116,6 +130,12 @@ export default async function GuidePage({ params }: Props) {
             </section>
           ))}
         </div>
+
+        {guide.faqs && guide.faqs.length > 0 && <FAQ items={guide.faqs} />}
+
+        {guide.relatedLinks && guide.relatedLinks.length > 0 && (
+          <RelatedLinks title="Related on RV Warranty Review" links={guide.relatedLinks} />
+        )}
 
         <RelatedLinks
           title="Related Guides"
