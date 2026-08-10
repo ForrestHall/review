@@ -481,6 +481,179 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "manufacturer-warranty-vs-extended-rv-warranty",
+    title: "Manufacturer Warranty vs Extended RV Warranty",
+    description:
+      "Factory warranty vs extended RV warranty explained — what each covers, when factory protection ends, and when an extended service contract makes sense.",
+    category: "basics",
+    publishedAt: "2026-08-10",
+    updatedAt: "2026-08-10",
+    readTime: 10,
+    reviewedBy: "michael-torres",
+    relatedLinks: [
+      { href: "/guides/what-is-an-rv-extended-warranty", title: "What Is an RV Extended Warranty?" },
+      { href: "/guides/rv-warranty-waiting-periods-and-eligibility", title: "Waiting Periods & Eligibility" },
+      { href: "/guides/is-an-extended-rv-warranty-worth-it", title: "Is an Extended RV Warranty Worth It?" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Quick Answer",
+        content: [
+          "A manufacturer (factory) warranty comes with the RV when it is new and covers defects for a limited time — often split between chassis/powertrain and coach structure. An extended RV warranty is a separate vehicle service contract you buy to cover mechanical breakdown after factory coverage ends, or to fill gaps factory plans never included.",
+          "They are not the same product. Factory coverage is tied to the builder and selling dealer network. Extended coverage is sold by third-party administrators (or as mechanical breakdown insurance) and usually works at a wider range of licensed repair facilities.",
+        ],
+      },
+      {
+        heading: "What a Manufacturer Warranty Typically Covers",
+        content: [
+          "New RVs often include a limited structural or coach warranty (commonly around 1–3 years, sometimes longer on the frame or roof) plus a chassis warranty from the chassis maker on motorhomes. Exact terms vary by brand — always read the warranty booklet that came with your unit.",
+          "Factory warranties focus on defects in materials and workmanship. They generally do not replace RV insurance, and they may require service at authorized dealers. Maintenance neglect and owner modifications can void claims.",
+        ],
+      },
+      {
+        heading: "What an Extended Warranty Covers",
+        content: [
+          "Extended plans cover mechanical breakdown of listed (or exclusionary) components during normal use — appliances, slides, generators, engines, transmissions, and more depending on the tier. You pay a deductible per approved claim and usually need pre-authorization.",
+          "Unlike factory coverage, you can often buy an extended plan after purchase, on used RVs, and from direct providers without going back to the selling dealer. See our guide on what an RV extended warranty is for coverage types.",
+        ],
+      },
+      {
+        heading: "Side-by-Side Differences That Matter",
+        content: [
+          "Who pays: factory claims go through the manufacturer/dealer process; extended claims go through a warranty administrator or insurer. Where you repair: factory plans may push authorized dealers; many extended plans allow any licensed shop. Timing: factory coverage starts at delivery and expires on a fixed calendar or mileage clock; extended plans start on your contract effective date and may include a waiting period.",
+          "Transfer: some factory warranties transfer to a second owner with limits; many extended plans transfer for a fee or free — a plus when selling. Cost: factory coverage is bundled into the purchase price; extended coverage is a separate premium you choose.",
+        ],
+      },
+      {
+        heading: "When to Rely on Factory Coverage Alone",
+        content: [
+          "If your RV is brand new, still deep in factory warranty, and you have cash for uncovered coach items, you may wait. Buying extended coverage on day one can still make sense if you want continuous protection and a smoother handoff when factory terms expire — especially on units with short coach warranties.",
+          "Do not assume \"bumper-to-bumper\" factory language covers every appliance for years. Many coach systems drop off after year one.",
+        ],
+      },
+      {
+        heading: "When an Extended Warranty Makes Sense",
+        content: [
+          "Buy or shop for extended coverage as factory protection winds down, when you buy used, or when you travel far from authorized dealers. Full-timers and Class A owners often need the broader repair network and mobile support that strong extended providers offer.",
+          "Compare waiting periods and eligibility before the factory warranty expires so you are not uncovered during a gap. Our waiting-period guide walks through those rules.",
+        ],
+      },
+      {
+        heading: "How to Avoid Paying Twice for the Same Risk",
+        content: [
+          "Map factory end dates for chassis, structure, and coach systems on a calendar. Get three extended quotes with the same deductible and term. Read exclusions so you are not buying a plan that duplicates remaining factory coverage while leaving the systems you care about exposed.",
+          "Dealer F&I offices sometimes sell extended plans at delivery — compare those quotes to direct providers before you roll anything into the loan.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is an extended RV warranty the same as the factory warranty?",
+        answer:
+          "No. The factory warranty is the manufacturer's limited warranty that comes with a new RV. An extended warranty is a separate service contract (or mechanical breakdown insurance) you purchase for additional repair coverage.",
+      },
+      {
+        question: "Can I buy an extended warranty while the factory warranty is still active?",
+        answer:
+          "Often yes. Some owners buy early so coverage begins when factory terms end. Check for waiting periods and whether the plan overlaps or waits until factory coverage expires.",
+      },
+      {
+        question: "Does a factory warranty cover used RVs?",
+        answer:
+          "Only if transferable balance remains and transfer rules are met. Many used RVs are out of factory coverage entirely — that is when extended plans are most valuable.",
+      },
+      {
+        question: "Which should I use when something breaks?",
+        answer:
+          "If the RV is still under factory warranty for that component, start with the selling or authorized dealer process. If factory coverage has ended or excludes the item, file through your extended warranty administrator.",
+      },
+    ],
+  },
+  {
+    slug: "rv-warranty-waiting-periods-and-eligibility",
+    title: "RV Warranty Waiting Periods and Eligibility",
+    description:
+      "RV warranty waiting periods, age and mileage limits, inspections, and eligibility rules explained — so you know when coverage actually starts.",
+    category: "shopping",
+    publishedAt: "2026-08-10",
+    updatedAt: "2026-08-10",
+    readTime: 9,
+    reviewedBy: "jennifer-walsh",
+    relatedLinks: [
+      { href: "/guides/manufacturer-warranty-vs-extended-rv-warranty", title: "Manufacturer vs Extended Warranty" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+      { href: "/guides/how-to-transfer-an-rv-warranty", title: "How to Transfer an RV Warranty" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Why Waiting Periods Exist",
+        content: [
+          "Most extended RV warranties include a waiting period — often 30 days and/or a mileage threshold — before you can file claims. Providers use this to reduce people buying coverage only after a failure has already started.",
+          "If you buy a plan today and the refrigerator dies tomorrow, it may not be covered until the waiting period ends. Plan purchases around travel and known weak components.",
+        ],
+      },
+      {
+        heading: "Common Waiting Period Rules",
+        content: [
+          "Typical patterns: 30 days from the contract effective date, sometimes plus 1,000 miles, whichever comes later. Emergency exceptions are rare and tightly defined. Transfers to a new owner may restart or shorten waiting rules — ask the administrator in writing.",
+          "Some plans waive the wait if you buy before the factory warranty expires and the extended coverage is set to begin at factory end. Get that sequencing in the contract, not just a sales promise.",
+        ],
+      },
+      {
+        heading: "Age and Mileage Eligibility",
+        content: [
+          "Providers cap how old or high-mileage an RV can be at enrollment. Examples in the market range from about 10–15 years up to 20 years for more flexible companies. Motorhomes may also have odometer caps; towables are judged mainly by model year and condition.",
+          "America's RV Warranty is comparatively flexible on age (up to roughly 20 years on many plans). Good Sam ESP and others are often tighter. Always confirm with your VIN before you cancel an existing policy.",
+        ],
+      },
+      {
+        heading: "Inspections and Pre-Existing Conditions",
+        content: [
+          "Some enrollments require a certified inspection; others skip inspections under a certain age. Either way, pre-existing conditions are usually excluded. A noise you already reported, a leak stain, or a fault code the shop noted before the effective date can sink a later claim.",
+          "Photograph systems at purchase, keep inspection reports, and disclose known issues. Honesty beats a denied claim six months later.",
+        ],
+      },
+      {
+        heading: "Usage and Specialty Eligibility",
+        content: [
+          "Full-time living, commercial rental, and business use are often excluded unless you buy the right endorsement. Extreme modifications, salvage titles, and grey-market imports can also disqualify a unit.",
+          "Tell the salesperson how you actually use the RV. Undisclosed full-timing or rental use is a fast path to claim denial.",
+        ],
+      },
+      {
+        heading: "How to Shop Around Waiting Periods",
+        content: [
+          "Ask every quote: When does coverage start? Is there a day and mileage wait? Does buying before factory expiration change the start date? Are there claim blackouts after transfer?",
+          "If you are mid-repair or about to travel cross-country, do not assume you are covered the day you pay. Align purchase timing with the waiting clock, or keep emergency cash for the gap.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How long is a typical RV warranty waiting period?",
+        answer:
+          "Thirty days is common, sometimes paired with a mileage requirement. Exact rules vary by provider and contract — always confirm in writing before you buy.",
+      },
+      {
+        question: "Can I file a claim during the waiting period?",
+        answer:
+          "Usually no for breakdowns that occur or are reported during the wait. Some emergency clauses exist, but they are limited. Assume you are self-insured until the waiting period ends.",
+      },
+      {
+        question: "What RV ages qualify for an extended warranty?",
+        answer:
+          "It depends on the company. Many cap enrollment around 10–15 years; some accept up to about 20 years. Mileage, condition, and RV type also matter.",
+      },
+      {
+        question: "Do I need an inspection to qualify?",
+        answer:
+          "Sometimes. Newer RVs may enroll without an inspection; older or higher-mileage units often need one. Even without an inspection, pre-existing conditions are typically excluded.",
+      },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

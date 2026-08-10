@@ -4,7 +4,7 @@
 
 Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
-Last updated: 2026-08-21
+Last updated: 2026-08-22
 
 ---
 
@@ -126,6 +126,7 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 
 | Title | URL | Category | Read Time |
 |-------|-----|----------|-----------|
+| Best RV Warranty for Fifth Wheels (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-fifth-wheels | RV Types | 9 min |
 | How to File an RV Warranty Claim (Step-by-Step) | https://www.rvwarrantyreview.com/blog/how-to-file-an-rv-warranty-claim | Claims & Service | 11 min |
 | Best RV Warranty for Travel Trailers (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-travel-trailers | RV Types | 9 min |
 | Best RV Warranty for Class A Motorhomes (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-class-a-motorhomes | RV Types | 10 min |
@@ -137,6 +138,8 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 
 | Title | URL | Category | Read Time |
 |-------|-----|----------|-----------|
+| Manufacturer Warranty vs Extended RV Warranty | https://www.rvwarrantyreview.com/guides/manufacturer-warranty-vs-extended-rv-warranty | RV Warranty 101 | 10 min |
+| RV Warranty Waiting Periods and Eligibility | https://www.rvwarrantyreview.com/guides/rv-warranty-waiting-periods-and-eligibility | Shopping Guides | 9 min |
 | How to Cancel an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-cancel-an-rv-warranty | Shopping Guides | 9 min |
 | How to Transfer an RV Warranty | https://www.rvwarrantyreview.com/guides/how-to-transfer-an-rv-warranty | Shopping Guides | 8 min |
 | RV Warranty Cost by RV Type | https://www.rvwarrantyreview.com/guides/rv-warranty-cost-by-rv-type | Pricing & Value | 10 min |
