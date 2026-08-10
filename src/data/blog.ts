@@ -10,6 +10,103 @@ export const blogCategories = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-file-an-rv-warranty-claim",
+    title: "How to File an RV Warranty Claim (Step-by-Step)",
+    description:
+      "How to file an RV warranty claim the right way — pre-authorization, repair shop paperwork, deductibles, timelines, and how to avoid common denials.",
+    category: "claims",
+    publishedAt: "2026-08-21",
+    updatedAt: "2026-08-21",
+    readTime: 11,
+    reviewedBy: "michael-torres",
+    relatedLinks: [
+      { href: "/blog/what-to-do-when-your-rv-warranty-claim-is-denied", title: "What to Do When Your Claim Is Denied" },
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+      { href: "/reviews/americas-rv-warranty", title: "America's RV Warranty Review" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Start Before Anything Breaks",
+        content: [
+          "The easiest claims are the ones you prepare for in advance. Save a digital copy of your contract, policy number, administrator phone number, and claims portal login. Keep maintenance receipts — oil changes, annual inspections, generator service — in one folder on your phone.",
+          "When a breakdown happens on the road, you will not want to dig through glove-box paperwork. Providers with strong claims reputations, like America's RV Warranty, still expect you to follow contract procedures, so knowing the process ahead of time saves hours.",
+        ],
+      },
+      {
+        heading: "Step 1: Confirm the Failure Is Likely Covered",
+        content: [
+          "Read the covered components and exclusions before you call. Mechanical breakdown from normal use is typically covered; collision damage, weather, neglect, modifications, and wear items usually are not. If the issue sounds like insurance (hail, accident, theft), call your insurer instead.",
+          "Not sure? Call claims anyway and ask. A five-minute eligibility check beats authorizing a $2,000 repair that gets denied later.",
+        ],
+      },
+      {
+        heading: "Step 2: Call for Pre-Authorization",
+        content: [
+          "Most RV extended warranties require pre-authorization before repairs begin. Call the claims number on your contract, provide your policy number, VIN, current mileage/hours, symptoms, and the repair facility's contact info.",
+          "Ask for a claim or authorization number and write it down. If the administrator needs a diagnosis first, the shop can usually perform inspection and diagnostics, then submit findings for approval before replacing parts.",
+        ],
+      },
+      {
+        heading: "Step 3: Use a Licensed Repair Facility",
+        content: [
+          "Take the RV to a licensed shop the administrator will work with — often any qualified facility in the U.S. or Canada, not only a brand dealership. Give the shop your claim number and ask them to contact the administrator with labor rates, parts quotes, and diagnostic notes.",
+          "Mobile mechanic coverage (offered by some providers) can help if you are stuck at a campground. Confirm mobile reimbursement limits before the tech starts work.",
+        ],
+      },
+      {
+        heading: "Step 4: Approve the Scope, Then Repair",
+        content: [
+          "Do not authorize major parts replacements until the warranty company approves them in writing or through the claims system. If the shop finds additional failures, each new item may need a separate authorization.",
+          "You will usually pay the deductible per visit (or per repair, depending on the contract). Ask whether the administrator pays the shop directly or reimburses you after you pay in full — that changes how much cash you need at pickup.",
+        ],
+      },
+      {
+        heading: "Step 5: Keep Records Until the Claim Closes",
+        content: [
+          "Save the final invoice, authorization emails, photos of the failed parts if the shop provides them, and proof of deductible payment. If reimbursement is owed to you, submit paperwork within the deadline in your contract — often 30–90 days.",
+          "Follow up if payment to the shop stalls. Note every call: date, time, rep name, and next step. Good documentation is your best defense if the claim is later questioned or partially denied.",
+        ],
+      },
+      {
+        heading: "Common Mistakes That Trigger Denials",
+        content: [
+          "Starting repairs before authorization. Using an unlicensed or cash-only shop that will not provide an itemized invoice. Missing maintenance records for the failed system. Assuming roadside assistance equals warranty authorization. Waiting weeks to report a failure that worsened from continued driving.",
+          "If a claim is denied anyway, follow our step-by-step appeal guide — get the denial in writing, check pre-auth and maintenance gaps, then escalate.",
+        ],
+      },
+      {
+        heading: "How Long Does an RV Warranty Claim Take?",
+        content: [
+          "Simple appliance claims can be authorized the same day. Complex powertrain or multi-system repairs often take several days for inspection, parts sourcing, and approval. Ask the adjuster for an expected timeline and whether a teardown authorization is needed to diagnose further.",
+          "Providers with in-house claims teams generally move faster than those that route everything through a third-party administrator — one reason claims process quality is a top ranking factor in our reviews.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do I need pre-authorization for every RV warranty claim?",
+        answer:
+          "Almost always yes for non-emergency repairs. Some contracts allow limited emergency authorization if you cannot reach claims after hours, but you must still report the claim quickly and keep all receipts. Read your contract's claims section for the exact rules.",
+      },
+      {
+        question: "Can I use any repair shop for an RV warranty claim?",
+        answer:
+          "Many plans allow any licensed repair facility in the U.S. or Canada. Some prefer or require preferred shops for certain repairs. Call claims first and confirm the facility is acceptable before work begins.",
+      },
+      {
+        question: "Who pays the repair shop — me or the warranty company?",
+        answer:
+          "It depends on the provider and the shop. Some administrators pay the facility directly after approval; others reimburse you after you pay. Ask when the claim is opened so you know what to bring at pickup.",
+      },
+      {
+        question: "What if my RV warranty claim is denied?",
+        answer:
+          "Request a written denial citing the contract section, gather maintenance records and invoices, then appeal to a claims supervisor. See our guide on what to do when an RV warranty claim is denied for the full escalation path.",
+      },
+    ],
+  },
+  {
     slug: "best-rv-warranty-for-travel-trailers",
     title: "Best RV Warranty for Travel Trailers (2026)",
     description:

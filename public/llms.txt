@@ -4,7 +4,7 @@
 
 Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
-Updated: 2026-07-23
+Updated: 2026-08-21
 
 ## About
 
@@ -48,6 +48,7 @@ Affiliate disclosure: We may earn commissions from links on this site. This does
 - [How to Cancel an RV Warranty](https://www.rvwarrantyreview.com/guides/how-to-cancel-an-rv-warranty)
 - [How to Transfer an RV Warranty](https://www.rvwarrantyreview.com/guides/how-to-transfer-an-rv-warranty)
 - [RV Warranty Cost by RV Type](https://www.rvwarrantyreview.com/guides/rv-warranty-cost-by-rv-type)
+- [How to File an RV Warranty Claim](https://www.rvwarrantyreview.com/blog/how-to-file-an-rv-warranty-claim)
 - [RV Warranty vs Insurance](https://www.rvwarrantyreview.com/blog/rv-warranty-vs-insurance-whats-the-difference)
 - [Best Warranty for Class A Motorhomes](https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-class-a-motorhomes)
 - [Best Warranty for Travel Trailers](https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-travel-trailers)

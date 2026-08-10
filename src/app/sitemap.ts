@@ -7,8 +7,8 @@ import { SITE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    { path: "", priority: 1, lastModified: "2026-07-23" },
-    { path: "/blog", priority: 0.85, lastModified: "2026-07-23" },
+    { path: "", priority: 1, lastModified: "2026-08-21" },
+    { path: "/blog", priority: 0.85, lastModified: "2026-08-21" },
     { path: "/compare", priority: 0.9, lastModified: "2026-07-23" },
     { path: "/guides", priority: 0.8, lastModified: "2026-07-23" },
     { path: "/how-we-review", priority: 0.8, lastModified: "2026-03-01" },

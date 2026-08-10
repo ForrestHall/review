@@ -4,7 +4,7 @@
 
 Site: https://www.rvwarrantyreview.com
 Contact: hello@rvwarrantyreview.com
-Last updated: 2026-07-23
+Last updated: 2026-08-21
 
 ---
 
@@ -126,6 +126,7 @@ We prioritize companies backed by rated insurance (B or higher) and BBB accredit
 
 | Title | URL | Category | Read Time |
 |-------|-----|----------|-----------|
+| How to File an RV Warranty Claim (Step-by-Step) | https://www.rvwarrantyreview.com/blog/how-to-file-an-rv-warranty-claim | Claims & Service | 11 min |
 | Best RV Warranty for Travel Trailers (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-travel-trailers | RV Types | 9 min |
 | Best RV Warranty for Class A Motorhomes (2026) | https://www.rvwarrantyreview.com/blog/best-rv-warranty-for-class-a-motorhomes | RV Types | 10 min |
 | RV Warranty vs Insurance: What's the Difference? | https://www.rvwarrantyreview.com/blog/rv-warranty-vs-insurance-whats-the-difference | Shopping Tips | 10 min |
