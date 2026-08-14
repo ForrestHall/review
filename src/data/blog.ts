@@ -10,6 +10,90 @@ export const blogCategories = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-read-rv-warranty-company-reviews",
+    title: "How to Read RV Warranty Company Reviews (Without Getting Spooked)",
+    description:
+      "A few bad RV warranty reviews don't tell the whole story. Learn how to weigh volume, patterns, and claims process — not cherry-picked one-stars.",
+    category: "tips",
+    publishedAt: "2026-08-14",
+    updatedAt: "2026-08-14",
+    readTime: 9,
+    reviewedBy: "jennifer-walsh",
+    relatedLinks: [
+      { href: "/how-we-review", title: "How We Review (Methodology)" },
+      { href: "/blog/red-flags-rv-warranty-sales-call", title: "7 Red Flags on Warranty Sales Calls" },
+      { href: "/blog/what-to-do-when-your-rv-warranty-claim-is-denied", title: "What to Do When Your Claim Is Denied" },
+      { href: "/#compare", title: "Best RV Warranty Companies" },
+    ],
+    sections: [
+      {
+        heading: "Why Every RV Warranty Company Has Bad Reviews",
+        content: [
+          "Warranty companies sit at the intersection of money, breakdowns, and disappointment. When a claim is paid, most owners drive away and never leave a review. When a claim is denied or delayed, many post a one-star rant the same day.",
+          "That skew is normal across the industry — including highly rated providers. A handful of angry Google or BBB posts does not automatically mean a company is a scam. It means someone had a bad claims experience, and you need to decide whether that experience is a pattern or an outlier.",
+        ],
+      },
+      {
+        heading: "Volume and Recency Beat Cherry-Picked Screenshots",
+        content: [
+          "Three one-star reviews on a company with hundreds or thousands of ratings is a different signal than a page that is mostly complaints. Always check total review count, overall star average, and how recent the negative posts are.",
+          "Sales opponents and anxious shoppers often screenshot the worst reviews. Zoom out. Ask: What share of recent reviews are negative? Are the one-stars clustered in one month after a policy change — or sprinkled across years as occasional noise?",
+        ],
+      },
+      {
+        heading: "Look for Patterns, Not Outliers",
+        content: [
+          "One review about a rude adjuster is noise. A dozen reviews in six months about the same issue — slow authorization, unpaid shops, or surprise exclusions — is a pattern worth taking seriously.",
+          "Sort reviews by newest first. Skim for repeated themes: pre-authorization fights, maintenance documentation, waiting periods, and shop payment delays. Unique situations (salvage title, commercial use, missing receipts) matter less than problems that keep showing up.",
+        ],
+      },
+      {
+        heading: "Decode Common Complaint Types",
+        content: [
+          "Exclusion surprises: \"They won't cover my roof seals / weather damage / wear item.\" Often the contract never covered it. That is frustrating, but it is not the same as a bait-and-switch if the sample contract disclosed the exclusion.",
+          "Process failures: no pre-authorization, repairs started before approval, or incomplete invoices. Many denials start here — and they are partly preventable. Waiting-period and pre-existing-condition complaints are also common when owners buy coverage after a problem has already begun.",
+          "Slow pay or poor communication with the shop is a legitimate service issue. If you see that theme repeatedly, dig deeper before you buy.",
+        ],
+      },
+      {
+        heading: "Signals That Matter More Than Star Average",
+        content: [
+          "Request a sample contract and actually read the exclusions. Confirm who administers claims and who backs the contract with insurance. Prefer BBB-accredited providers and ask how claims are handled — in-house team vs third-party administrator.",
+          "Our rankings weigh transparency, claims process, coverage options, and customer service — including secret-shopper checks — not just public star averages. See how we review for the full methodology.",
+        ],
+      },
+      {
+        heading: "A Simple Review Checklist Before You Buy",
+        content: [
+          "1) Check total reviews and overall rating, not three viral one-stars. 2) Scan the last 90 days for repeated complaint themes. 3) Separate exclusion surprises from process or payment failures. 4) Verify administrator, insurance backing, and sample contract. 5) Get at least two competing quotes and compare annualized cost plus claims reputation.",
+          "If a few bad reviews are the only reason you are hesitating on an otherwise strong provider, put them in context — then decide with the contract and claims process, not fear alone.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Should I avoid a warranty company with bad Google reviews?",
+        answer:
+          "Not automatically. Look at review volume, overall rating, and whether negatives form a recent pattern. A few bad reviews on a large, mostly positive profile is common for any company that pays — and denies — claims.",
+      },
+      {
+        question: "Why do warranty companies have more complaints than other businesses?",
+        answer:
+          "Customers usually review warranty companies only after a stressful breakdown or denial. Successful claims rarely generate five-star posts, so public feedback skews negative compared with restaurants or retailers.",
+      },
+      {
+        question: "What's the difference between a fair complaint and a red flag?",
+        answer:
+          "A fair complaint is often a one-off about tone, timing, or a denied item that was clearly excluded. Red flags are repeated themes: unpaid shops, bait-and-switch coverage, inability to name the administrator, or refusal to provide a sample contract.",
+      },
+      {
+        question: "Where should I research besides Google and BBB?",
+        answer:
+          "Read sample contracts, check insurance backing, compare multiple providers, and use independent review sites with disclosed methodology. Our how-we-review page and company rankings are built for that comparison — not just star averages.",
+      },
+    ],
+  },
+  {
     slug: "best-rv-warranty-for-fifth-wheels",
     title: "Best RV Warranty for Fifth Wheels (2026)",
     description:
