@@ -94,14 +94,23 @@ export function CompanyCard({ company, featured = false }: CompanyCardProps) {
           Read Full Review
         </Link>
         {company.ctaUrl ? (
-          <a
-            href={company.ctaUrl}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-            className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-          >
-            {company.ctaLabel ?? "Get Quote"}
-          </a>
+          company.ctaUrl.startsWith("/") ? (
+            <Link
+              href={company.ctaUrl}
+              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+            >
+              {company.ctaLabel ?? "Get Quote"}
+            </Link>
+          ) : (
+            <a
+              href={company.ctaUrl}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+            >
+              {company.ctaLabel ?? "Get Quote"}
+            </a>
+          )
         ) : (
           company.phone && (
             <a

@@ -151,14 +151,23 @@ export default async function GuidePage({ params }: Props) {
             Ready to Compare Providers?
           </h2>
           <p className="mt-2 text-sm text-muted">
-            See our ranked list of the best RV extended warranty companies.
+            See our ranked list of the best RV extended warranty companies — or
+            request a free quote from our top pick.
           </p>
-          <Link
-            href="/#compare"
-            className="mt-4 inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
-          >
-            Compare RV Warranties
-          </Link>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/find-coverage"
+              className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
+            >
+              Find Coverage
+            </Link>
+            <Link
+              href="/#compare"
+              className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand hover:bg-brand hover:text-white"
+            >
+              Compare RV Warranties
+            </Link>
+          </div>
         </div>
       </article>
     </>

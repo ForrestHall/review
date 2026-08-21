@@ -59,18 +59,18 @@ export default function HomePage() {
             warranty for your motorhome, travel trailer, or fifth wheel.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/find-coverage"
+              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-teal-50"
+            >
+              Find Coverage
+            </Link>
             <a
               href="#compare"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-teal-50"
+              className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
             >
               Compare Top Providers
             </a>
-            <Link
-              href="/guides/what-is-an-rv-extended-warranty"
-              className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              RV Warranty 101
-            </Link>
           </div>
         </div>
       </section>

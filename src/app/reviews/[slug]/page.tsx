@@ -223,6 +223,27 @@ export default async function ReviewPage({ params }: Props) {
                 {company.deductible}
               </p>
             </div>
+            {company.ctaUrl && (
+              <div className="ml-auto">
+                {company.ctaUrl.startsWith("/") ? (
+                  <Link
+                    href={company.ctaUrl}
+                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                  >
+                    {company.ctaLabel ?? "Get a Quote"}
+                  </Link>
+                ) : (
+                  <a
+                    href={company.ctaUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                  >
+                    {company.ctaLabel ?? "Get a Quote"}
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </header>
 
@@ -326,14 +347,23 @@ export default async function ReviewPage({ params }: Props) {
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{company.verdict}</p>
           {company.ctaUrl ? (
-            <a
-              href={company.ctaUrl}
-              target="_blank"
-              rel="sponsored noopener noreferrer"
-              className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-            >
-              {company.ctaLabel ?? "Get a Quote"}
-            </a>
+            company.ctaUrl.startsWith("/") ? (
+              <Link
+                href={company.ctaUrl}
+                className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              >
+                {company.ctaLabel ?? "Get a Quote"}
+              </Link>
+            ) : (
+              <a
+                href={company.ctaUrl}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              >
+                {company.ctaLabel ?? "Get a Quote"}
+              </a>
+            )
           ) : (
             company.phone && (
               <a

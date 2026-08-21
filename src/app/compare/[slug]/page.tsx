@@ -108,6 +108,25 @@ export default async function ComparePage({ params }: Props) {
               {winner.name}
             </p>
             <p className="mt-2 text-sm text-muted">{comparison.verdict}</p>
+            {winner.ctaUrl && (
+              winner.ctaUrl.startsWith("/") ? (
+                <Link
+                  href={winner.ctaUrl}
+                  className="mt-4 inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                >
+                  {winner.ctaLabel ?? "Get a Quote"}
+                </Link>
+              ) : (
+                <a
+                  href={winner.ctaUrl}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="mt-4 inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                >
+                  {winner.ctaLabel ?? "Get a Quote"}
+                </a>
+              )
+            )}
           </div>
         )}
 
@@ -162,6 +181,24 @@ export default async function ComparePage({ params }: Props) {
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{comparison.verdict}</p>
           <div className="mt-5 flex flex-wrap gap-3">
+            {winner?.ctaUrl &&
+              (winner.ctaUrl.startsWith("/") ? (
+                <Link
+                  href={winner.ctaUrl}
+                  className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90"
+                >
+                  {winner.ctaLabel ?? "Get a Quote"} — {winner.name}
+                </Link>
+              ) : (
+                <a
+                  href={winner.ctaUrl}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90"
+                >
+                  {winner.ctaLabel ?? "Get a Quote"} — {winner.name}
+                </a>
+              ))}
             <Link
               href={`/reviews/${companyA.slug}`}
               className="rounded-lg border border-brand px-4 py-2 text-sm font-semibold text-brand hover:bg-brand hover:text-white"

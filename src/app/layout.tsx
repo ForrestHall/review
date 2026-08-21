@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { SiteChrome } from "@/components/SiteChrome";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
@@ -64,9 +63,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col antialiased">
         <JsonLd data={organizationSchema} />
         <Analytics />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
