@@ -8,6 +8,8 @@ type CompanyCardProps = {
 };
 
 export function CompanyCard({ company, featured = false }: CompanyCardProps) {
+  const isArw = company.slug === "americas-rv-warranty";
+
   return (
     <article
       id={company.slug}
@@ -93,7 +95,26 @@ export function CompanyCard({ company, featured = false }: CompanyCardProps) {
         >
           Read Full Review
         </Link>
-        {company.ctaUrl ? (
+        {isArw ? (
+          <>
+            <Link
+              href="/find-coverage"
+              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+            >
+              Get Matched
+            </Link>
+            {company.ctaUrl && (
+              <a
+                href={company.ctaUrl}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand hover:text-brand"
+              >
+                Get Quote
+              </a>
+            )}
+          </>
+        ) : company.ctaUrl ? (
           company.ctaUrl.startsWith("/") ? (
             <Link
               href={company.ctaUrl}

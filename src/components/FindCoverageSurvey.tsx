@@ -42,6 +42,15 @@ const backBtn =
 const primaryBtn =
   "rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90 disabled:opacity-60";
 
+function trackQuizStep(step: string) {
+  if (typeof window === "undefined" || !("gtag" in window)) return;
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.("event", "quiz_step", {
+    quiz_step: step,
+    method: "find_coverage",
+  });
+}
+
 export function FindCoverageSurvey({
   classes,
   makes,
@@ -75,6 +84,10 @@ export function FindCoverageSurvey({
   useEffect(() => {
     captureLeadAttribution();
   }, []);
+
+  useEffect(() => {
+    trackQuizStep(step);
+  }, [step]);
 
   const needsOdometer = rvClass ? isMotorhomeClass(rvClass) : false;
 
@@ -214,7 +227,8 @@ export function FindCoverageSurvey({
               What type of RV do you own?
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Tap one to continue — we&apos;ll tailor coverage to your class.
+              About 60 seconds total — tap your class and we&apos;ll match you
+              to the best coverage.
             </p>
           </div>
           <div className="grid gap-3">

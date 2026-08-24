@@ -28,11 +28,11 @@ export default async function FindCoveragePage() {
             Free quote · No obligation
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold leading-tight text-foreground sm:text-4xl">
-            Get your free RV warranty quote
+            Get matched to the best RV warranty
           </h1>
           <p className="mt-3 text-base leading-relaxed text-muted">
-            Tell us about your RV — we&apos;ll match you with the best coverage
-            in about a minute.
+            About 60 seconds — tell us about your RV and we&apos;ll match you
+            with the best coverage.
           </p>
           <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-medium text-muted">
             <li>No obligation</li>

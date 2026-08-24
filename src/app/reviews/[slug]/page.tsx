@@ -5,6 +5,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
+import { QuizMatchCta } from "@/components/QuizMatchCta";
 import { Rating } from "@/components/Rating";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { getAuthorOrDefault } from "@/data/authors";
@@ -223,26 +224,47 @@ export default async function ReviewPage({ params }: Props) {
                 {company.deductible}
               </p>
             </div>
-            {company.ctaUrl && (
-              <div className="ml-auto">
-                {company.ctaUrl.startsWith("/") ? (
-                  <Link
-                    href={company.ctaUrl}
-                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-                  >
-                    {company.ctaLabel ?? "Get a Quote"}
-                  </Link>
-                ) : (
+            {company.slug === "americas-rv-warranty" ? (
+              <div className="ml-auto flex flex-wrap gap-2">
+                <Link
+                  href="/find-coverage"
+                  className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                >
+                  Get Matched
+                </Link>
+                {company.ctaUrl && (
                   <a
                     href={company.ctaUrl}
                     target="_blank"
                     rel="sponsored noopener noreferrer"
-                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                    className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
                   >
-                    {company.ctaLabel ?? "Get a Quote"}
+                    Get Quote
                   </a>
                 )}
               </div>
+            ) : (
+              company.ctaUrl && (
+                <div className="ml-auto">
+                  {company.ctaUrl.startsWith("/") ? (
+                    <Link
+                      href={company.ctaUrl}
+                      className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                    >
+                      {company.ctaLabel ?? "Get a Quote"}
+                    </Link>
+                  ) : (
+                    <a
+                      href={company.ctaUrl}
+                      target="_blank"
+                      rel="sponsored noopener noreferrer"
+                      className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                    >
+                      {company.ctaLabel ?? "Get a Quote"}
+                    </a>
+                  )}
+                </div>
+              )
             )}
           </div>
         </header>
@@ -346,7 +368,26 @@ export default async function ReviewPage({ params }: Props) {
             Final Verdict
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{company.verdict}</p>
-          {company.ctaUrl ? (
+          {company.slug === "americas-rv-warranty" ? (
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                href="/find-coverage"
+                className="inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+              >
+                Get Matched
+              </Link>
+              {company.ctaUrl && (
+                <a
+                  href={company.ctaUrl}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="inline-block rounded-lg border border-brand px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
+                >
+                  Get Quote
+                </a>
+              )}
+            </div>
+          ) : company.ctaUrl ? (
             company.ctaUrl.startsWith("/") ? (
               <Link
                 href={company.ctaUrl}
@@ -375,6 +416,8 @@ export default async function ReviewPage({ params }: Props) {
             )
           )}
         </section>
+
+        <QuizMatchCta />
 
         <RelatedLinks
           title="Compare With Other Providers"

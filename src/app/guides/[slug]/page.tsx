@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { StickyGetMatched } from "@/components/StickyGetMatched";
 import { getAuthorOrDefault } from "@/data/authors";
 import {
   getGuide,
@@ -91,8 +92,9 @@ export default async function GuidePage({ params }: Props) {
   return (
     <>
       <JsonLd data={schemas} />
+      <StickyGetMatched />
 
-      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+      <article className="mx-auto max-w-3xl px-4 py-10 pb-24 sm:px-6 md:pb-10">
         <Breadcrumbs
           items={[
             { name: "Home", href: "/" },
@@ -148,18 +150,18 @@ export default async function GuidePage({ params }: Props) {
 
         <div className="mt-12 rounded-xl border border-border bg-background p-6">
           <h2 className="font-serif text-xl font-semibold text-foreground">
-            Ready to Compare Providers?
+            Get matched in about 60 seconds
           </h2>
           <p className="mt-2 text-sm text-muted">
-            See our ranked list of the best RV extended warranty companies — or
-            request a free quote from our top pick.
+            Answer a few questions about your RV and we&apos;ll match you with
+            the best coverage — or browse our ranked list of providers.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href="/find-coverage"
               className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
             >
-              Find Coverage
+              Get Matched
             </Link>
             <Link
               href="/#compare"

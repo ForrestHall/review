@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AuthorByline } from "@/components/AuthorByline";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { QuizMatchCta } from "@/components/QuizMatchCta";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { comparisons, getComparison } from "@/data/comparisons";
 import { getCompany } from "@/data/companies";
@@ -109,7 +110,24 @@ export default async function ComparePage({ params }: Props) {
             </p>
             <p className="mt-2 text-sm text-muted">{comparison.verdict}</p>
             {winner.ctaUrl && (
-              winner.ctaUrl.startsWith("/") ? (
+              winner.slug === "americas-rv-warranty" ? (
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link
+                    href="/find-coverage"
+                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
+                  >
+                    Get Matched
+                  </Link>
+                  <a
+                    href={winner.ctaUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
+                  >
+                    Get Quote — {winner.name}
+                  </a>
+                </div>
+              ) : winner.ctaUrl.startsWith("/") ? (
                 <Link
                   href={winner.ctaUrl}
                   className="mt-4 inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
@@ -181,7 +199,25 @@ export default async function ComparePage({ params }: Props) {
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{comparison.verdict}</p>
           <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/find-coverage"
+              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90"
+            >
+              Get Matched
+            </Link>
             {winner?.ctaUrl &&
+              winner.slug === "americas-rv-warranty" && (
+                <a
+                  href={winner.ctaUrl}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-lg border border-brand px-4 py-2 text-sm font-semibold text-brand hover:bg-brand hover:text-white"
+                >
+                  Get Quote — {winner.name}
+                </a>
+              )}
+            {winner?.ctaUrl &&
+              winner.slug !== "americas-rv-warranty" &&
               (winner.ctaUrl.startsWith("/") ? (
                 <Link
                   href={winner.ctaUrl}
@@ -213,6 +249,8 @@ export default async function ComparePage({ params }: Props) {
             </Link>
           </div>
         </section>
+
+        <QuizMatchCta variant="compare" />
 
         <RelatedLinks
           title="Helpful Guides"

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ExitIntentMatch } from "@/components/ExitIntentMatch";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SITE } from "@/lib/site";
@@ -54,6 +55,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       {ads ? <AdsHeader /> : <Header />}
       <main className="flex-1">{children}</main>
       {ads ? <AdsFooter /> : <Footer />}
+      {!ads && <ExitIntentMatch />}
     </>
   );
 }
