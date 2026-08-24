@@ -54,16 +54,15 @@ export default function HomePage() {
             Best RV Extended Warranty Companies
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-teal-100">
-            Compare the top RV warranty providers based on independent ratings,
-            customer reviews, and coverage details. Find the best extended
-            warranty for your motorhome, travel trailer, or fifth wheel.
+            Take this short quiz to get matched with the best RV warranty
+            coverage for your motorhome, travel trailer, or fifth wheel.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/find-coverage"
               className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-teal-50"
             >
-              Find Coverage
+              Get Matched
             </Link>
             <a
               href="#compare"

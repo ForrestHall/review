@@ -43,7 +43,7 @@ export function Header() {
           href="/find-coverage"
           className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
         >
-          Find Coverage
+          Get Matched
         </Link>
       </div>
     </header>

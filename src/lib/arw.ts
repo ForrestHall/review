@@ -1,4 +1,4 @@
-/** ARW advertiser lead API helpers — token stays server-side only. */
+/** AWI advertiser lead API — americaswarranty.com portal (/api/insert/rv). */
 
 export const ARW_LEAD_SOURCE = "rvr";
 
@@ -14,6 +14,60 @@ export const ARW_FALLBACK_CLASSES = [
   { label: "Toy Hauler", value: "Toy Hauler TRL" },
 ] as const;
 
+/** Full US state names — required by AWI advertiser API docs. */
+export const US_STATES = [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+] as const;
+
 export type ArwOption = { label: string; value: string };
 
 export type ArwLeadPayload = {
@@ -21,12 +75,13 @@ export type ArwLeadPayload = {
   lastName: string;
   email: string;
   phone: string;
+  state: string;
   rvClass: string;
   make: string;
   model: string;
   modelYear: number;
+  purchasePrice: number;
   odometer?: number;
-  purchasePrice?: number;
   utm_campaign?: string;
   utm_source?: string;
   utm_medium?: string;
@@ -34,7 +89,7 @@ export type ArwLeadPayload = {
   utm_term?: string;
 };
 
-/** Lead API host (AWI / americaswarranty.com). */
+/** Lead API host (AWI advertiser portal). */
 function arwBaseUrl() {
   return (
     process.env.ARW_API_BASE_URL?.replace(/\/$/, "") ||
@@ -42,7 +97,7 @@ function arwBaseUrl() {
   );
 }
 
-/** Public class/make lists still live on the RV marketing site. */
+/** Class/make reference lists (RV marketing site). */
 function arwReferenceBaseUrl() {
   return (
     process.env.ARW_REFERENCE_BASE_URL?.replace(/\/$/, "") ||
@@ -54,7 +109,7 @@ export function hasArwApiToken() {
   return Boolean(process.env.ARW_API_TOKEN?.trim());
 }
 
-/** Motorhomes (Class A/B/C MTR) need odometer; fifth wheels, travel trailers, toy haulers (TRL) do not. */
+/** Motorhomes (MTR) need odometer; towables (TRL) do not. */
 export function isMotorhomeClass(rvClass: string) {
   const normalized = rvClass.toUpperCase();
   if (normalized.includes("TRL")) return false;
@@ -87,7 +142,6 @@ export async function getArwClasses(): Promise<ArwOption[]> {
     });
     if (!res.ok) return [...ARW_FALLBACK_CLASSES];
     const data = await res.json();
-    // ARW returns classes under the `makes` key on /get/classes
     const options = normalizeOptions(
       data?.data ?? data?.classes ?? data?.makes ?? data
     );
@@ -132,16 +186,15 @@ export async function insertArwLead(
     lastName: payload.lastName,
     email: payload.email,
     phone: payload.phone,
+    state: payload.state,
     rvClass: payload.rvClass,
     make: payload.make,
     model: payload.model,
     modelYear: payload.modelYear,
+    purchasePrice: payload.purchasePrice,
   };
   if (payload.odometer != null) {
     body.odometer = payload.odometer;
-  }
-  if (payload.purchasePrice != null) {
-    body.purchasePrice = payload.purchasePrice;
   }
   for (const key of [
     "utm_campaign",

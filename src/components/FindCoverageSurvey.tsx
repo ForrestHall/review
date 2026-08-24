@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   ARW_HOSTED_QUOTE_URL,
   isMotorhomeClass,
+  US_STATES,
   type ArwOption,
 } from "@/lib/arw";
 import { trackMetaLead } from "@/lib/meta";
@@ -23,6 +24,8 @@ type StepId =
   | "model"
   | "year"
   | "odometer"
+  | "state"
+  | "price"
   | "contact"
   | "matching"
   | "result";
@@ -57,6 +60,8 @@ export function FindCoverageSurvey({
   const [model, setModel] = useState("");
   const [modelYear, setModelYear] = useState("");
   const [odometer, setOdometer] = useState("");
+  const [state, setState] = useState("");
+  const [purchasePrice, setPurchasePrice] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -76,7 +81,7 @@ export function FindCoverageSurvey({
   const steps = useMemo((): StepId[] => {
     const base: StepId[] = ["class", "make", "model", "year"];
     if (needsOdometer) base.push("odometer");
-    base.push("contact", "matching", "result");
+    base.push("state", "price", "contact", "matching", "result");
     return base;
   }, [needsOdometer]);
 
@@ -107,7 +112,7 @@ export function FindCoverageSurvey({
 
   function afterVehicleYear() {
     setError("");
-    setStep(needsOdometer ? "odometer" : "contact");
+    setStep(needsOdometer ? "odometer" : "state");
   }
 
   function finishToResult(ok: boolean, fallback: boolean) {
@@ -145,10 +150,12 @@ export function FindCoverageSurvey({
           lastName,
           email,
           phone,
+          state,
           rvClass,
           make,
           model,
           modelYear: Number(modelYear),
+          purchasePrice: Number(purchasePrice),
           odometer: needsOdometer && odometer ? Number(odometer) : undefined,
           website,
           utm_campaign: attribution?.utm_campaign,
@@ -429,6 +436,94 @@ export function FindCoverageSurvey({
                 const n = Number(odometer);
                 if (!odometer || !Number.isFinite(n) || n < 0) {
                   setError("Please enter a valid odometer reading.");
+                  return;
+                }
+                setError("");
+                setStep("state");
+              }}
+            >
+              Continue
+            </button>
+          </div>
+        </section>
+      )}
+
+      {step === "state" && (
+        <section className="space-y-5">
+          <div>
+            <h2 className="font-serif text-2xl font-semibold text-foreground sm:text-3xl">
+              Where is the RV registered?
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Select the full state name.
+            </p>
+          </div>
+          <div className="grid max-h-72 grid-cols-2 gap-2 overflow-y-auto sm:grid-cols-3">
+            {US_STATES.map((s) => {
+              const selected = state === s;
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => {
+                    setState(s);
+                    setError("");
+                    setStep("price");
+                  }}
+                  className={`rounded-xl border px-3 py-3 text-left text-sm font-semibold transition-colors ${
+                    selected
+                      ? "border-brand bg-brand/10 text-brand"
+                      : "border-border bg-background text-foreground hover:border-brand/60"
+                  }`}
+                >
+                  {s}
+                </button>
+              );
+            })}
+          </div>
+          <button type="button" onClick={goBack} className={backBtn}>
+            Back
+          </button>
+        </section>
+      )}
+
+      {step === "price" && (
+        <section className="space-y-5">
+          <div>
+            <h2 className="font-serif text-2xl font-semibold text-foreground sm:text-3xl">
+              Approx. purchase price?
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              What you paid (or estimate) for the RV — used for quoting.
+            </p>
+          </div>
+          <input
+            id="purchasePrice"
+            type="number"
+            min={0}
+            step={100}
+            autoFocus
+            value={purchasePrice}
+            onChange={(e) => setPurchasePrice(e.target.value)}
+            placeholder="e.g. 85000"
+            className={inputClass}
+          />
+          {error && (
+            <p className="text-sm text-red-700" role="alert">
+              {error}
+            </p>
+          )}
+          <div className="flex flex-wrap gap-3">
+            <button type="button" onClick={goBack} className={backBtn}>
+              Back
+            </button>
+            <button
+              type="button"
+              className={primaryBtn}
+              onClick={() => {
+                const n = Number(purchasePrice);
+                if (!purchasePrice || !Number.isFinite(n) || n < 0) {
+                  setError("Please enter a valid purchase price.");
                   return;
                 }
                 setError("");

@@ -3,6 +3,7 @@ import {
   hasArwApiToken,
   insertArwLead,
   isMotorhomeClass,
+  US_STATES,
   type ArwLeadPayload,
 } from "@/lib/arw";
 
@@ -31,7 +32,6 @@ export async function POST(request: Request) {
     return badRequest("Invalid request body.");
   }
 
-  // Honeypot — bots fill this; pretend success
   if (body.website) {
     return NextResponse.json({ success: true });
   }
@@ -40,10 +40,12 @@ export async function POST(request: Request) {
   const lastName = String(body.lastName ?? "").trim();
   const email = String(body.email ?? "").trim();
   const phone = String(body.phone ?? "").trim();
+  const state = String(body.state ?? "").trim();
   const rvClass = String(body.rvClass ?? "").trim();
   const make = String(body.make ?? "").trim();
   const model = String(body.model ?? "").trim();
   const modelYear = Number(body.modelYear);
+  const purchasePrice = Number(body.purchasePrice);
   const odometerRaw = body.odometer;
   const odometer =
     odometerRaw === undefined ||
@@ -60,11 +62,17 @@ export async function POST(request: Request) {
   if (phone.replace(/\D/g, "").length < 10) {
     return badRequest("Please enter a valid phone number.");
   }
+  if (!(US_STATES as readonly string[]).includes(state)) {
+    return badRequest("Please select a valid US state (full name).");
+  }
   if (!rvClass) return badRequest("Please select an RV class.");
   if (!make) return badRequest("Please select or enter the RV make.");
   if (!model) return badRequest("Please enter the RV model.");
   if (!Number.isFinite(modelYear) || modelYear < 1970 || modelYear > 2030) {
     return badRequest("Please enter a valid model year.");
+  }
+  if (!Number.isFinite(purchasePrice) || purchasePrice < 0) {
+    return badRequest("Please enter a valid purchase price.");
   }
   if (isMotorhomeClass(rvClass)) {
     if (odometer === undefined || !Number.isFinite(odometer) || odometer < 0) {
@@ -77,10 +85,12 @@ export async function POST(request: Request) {
     lastName,
     email,
     phone,
+    state,
     rvClass,
     make,
     model,
     modelYear,
+    purchasePrice,
   };
   if (odometer !== undefined && Number.isFinite(odometer)) {
     payload.odometer = odometer;
@@ -104,7 +114,8 @@ export async function POST(request: Request) {
       const useFallback =
         result.status === 503 ||
         result.status === 401 ||
-        result.status === 502;
+        result.status === 502 ||
+        result.status === 500;
       return NextResponse.json(
         { error: result.message, fallback: useFallback },
         { status: result.status }
