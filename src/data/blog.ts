@@ -21,8 +21,7 @@ export const blogPosts: BlogPost[] = [
     reviewedBy: "michael-torres",
     relatedLinks: [
       { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
-      { href: "/compare/americas-rv-warranty-vs-no-repair-cost", title: "ARW vs No Repair Cost" },
-      { href: "/compare/wholesale-warranties-vs-no-repair-cost", title: "Wholesale vs No Repair Cost" },
+      { href: "/compare/americas-rv-warranty-vs-wholesale-warranties", title: "ARW vs Wholesale Warranties" },
       { href: "/blog/dealership-vs-warranty-company-which-is-cheaper", title: "Dealership vs Warranty Company" },
       { href: "/find-coverage", title: "Get Matched in ~60 Seconds" },
     ],
@@ -73,14 +72,14 @@ export const blogPosts: BlogPost[] = [
         heading: "6. Waiting Period, Eligibility, and Pre-Existing Conditions",
         content: [
           "Most plans include a waiting period before claims are eligible. Write down the number of days (and any mileage wait) for each quote. Buying today does not mean a breakdown tomorrow is covered.",
-          "Confirm age and mileage limits. Price-focused sellers like No Repair Cost often advertise model-year floors (for example, 2011+). Wholesale Warranties and others may allow older units with different terms. If your RV is near a cutoff, eligibility can matter more than a $200 premium difference.",
+          "Confirm age and mileage limits. Some providers advertise model-year floors; others allow older units with different terms. If your RV is near a cutoff, eligibility can matter more than a $200 premium difference.",
         ],
       },
       {
         heading: "7. Who Handles Claims — and Who Backs the Contract",
         content: [
           "Ask for the administrator name and whether claims are in-house or third-party. Ask for the insurance company that backs the contract and its rating. \"Same as the dealer\" marketing only helps if you can verify the underwriter and read matching contract language.",
-          "Providers that compete mainly on skipping dealer markup — including No Repair Cost — can still be legitimate options, but you should line up administrator, deductible, and exclusions against the dealer quote before assuming the products are identical. Our America's RV Warranty vs No Repair Cost and Wholesale Warranties vs No Repair Cost comparisons show how those tradeoffs look in practice.",
+          "Providers that compete mainly on skipping dealer markup can still be legitimate options, but you should line up administrator, deductible, and exclusions against the dealer quote before assuming the products are identical. Our America's RV Warranty vs Wholesale Warranties comparison shows how price-focused plans trade off against in-house claims and mobile support.",
         ],
       },
       {
