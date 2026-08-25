@@ -237,9 +237,75 @@ export const companies: CompanyReview[] = [
     ],
   },
   {
+    slug: "no-repair-cost",
+    name: "No Repair Cost",
+    rank: 5,
+    rating: 6.8,
+    reviewCount: 501,
+    summary:
+      "No Repair Cost markets the same dealer-sold RV service contract without dealer markup, competing mainly on price for model-year 2011 and newer RVs.",
+    pros: [
+      "Competitive pricing versus typical dealer-sold quotes",
+      "Claims same A-rated underwriter as dealer policies",
+      "Any licensed shop in the USA, with mobile mechanic option",
+      "Transferable and cancelable contract messaging",
+      "Strong Google review volume for a newer brand",
+    ],
+    cons: [
+      "Newer brand with a thinner independent claims track record",
+      "Claims quality depends on the underlying underwriter/admin, not an in-house claims team",
+      "Eligibility limited to model year 2011 and newer",
+      "Less transparent sample-contract detail than top-ranked providers",
+    ],
+    highlights: [
+      "Skip-dealer-markup pricing pitch",
+      "A-rated underwriter claim",
+      "Any licensed shop / mobile tech",
+      "2011+ RV eligibility",
+    ],
+    testimonials: [
+      {
+        quote:
+          "Got a much lower quote than the dealer for what they said was the same coverage.",
+        source: "Google Review",
+      },
+      {
+        quote:
+          "Fast online quote, but I still wanted to see the full contract before buying.",
+        source: "Google Review",
+      },
+    ],
+    verdict:
+      "No Repair Cost can make sense if you already have a high dealer quote and want a lower price on similar paper. For claims reliability, mobile support, and an in-house claims team, higher-ranked providers still lead.",
+    coverageType: "Extended Service Contract",
+    deductible: "Varies by plan",
+    eligibility: "Model year 2011 and newer",
+    website: "https://www.norepaircost.com/",
+    publishedAt: "2026-08-25",
+    updatedAt: "2026-08-25",
+    reviewedBy: "michael-torres",
+    faqs: [
+      {
+        question: "Is No Repair Cost legit?",
+        answer:
+          "No Repair Cost is a real RV service-contract seller that markets dealer-equivalent coverage at a lower price. Verify the underwriter, administrator, and full contract terms before buying — brand marketing is not the same as claims performance.",
+      },
+      {
+        question: "Is No Repair Cost the same warranty the dealer sells?",
+        answer:
+          "They claim the same underwriter, coverage, and claims process as dealer-sold policies, without dealer markup. Always compare the actual contract language, deductible, waiting period, and exclusions side by side before assuming the products are identical.",
+      },
+      {
+        question: "How does No Repair Cost compare to Wholesale Warranties or America's RV Warranty?",
+        answer:
+          "Like Wholesale Warranties, No Repair Cost competes heavily on price. America's RV Warranty ranks higher for in-house claims, mobile mechanic support, and overall claims reputation. Get quotes from both and weigh price against how claims are handled when something breaks.",
+      },
+    ],
+  },
+  {
     slug: "rv-complete",
     name: "RV Complete",
-    rank: 5,
+    rank: 6,
     rating: 6.0,
     reviewCount: 432,
     summary:
@@ -291,7 +357,7 @@ export const companies: CompanyReview[] = [
   {
     slug: "warranty-direct-protect",
     name: "Warranty Direct Protect",
-    rank: 6,
+    rank: 7,
     rating: 5.5,
     reviewCount: 876,
     summary:
@@ -344,7 +410,7 @@ export const companies: CompanyReview[] = [
   {
     slug: "easycare-rv",
     name: "EasyCare RV",
-    rank: 7,
+    rank: 8,
     rating: 5.0,
     reviewCount: 543,
     summary:
@@ -398,7 +464,7 @@ export const companies: CompanyReview[] = [
   {
     slug: "american-guardian",
     name: "American Guardian",
-    rank: 8,
+    rank: 9,
     rating: 4.5,
     reviewCount: 321,
     summary:
@@ -452,7 +518,7 @@ export const companies: CompanyReview[] = [
   {
     slug: "warranty-forever-rv",
     name: "Warranty Forever RV",
-    rank: 9,
+    rank: 10,
     rating: 4.0,
     reviewCount: 298,
     summary:

@@ -10,6 +10,119 @@ export const blogCategories = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-compare-rv-warranty-quotes",
+    title: "How to Compare Two RV Warranty Quotes Side by Side",
+    description:
+      "A practical checklist for comparing RV extended warranty quotes — covered components, labor rates, mobile repairs, travel benefits, deductibles, and cancel/transfer terms.",
+    category: "shopping",
+    publishedAt: "2026-08-25",
+    updatedAt: "2026-08-25",
+    readTime: 10,
+    reviewedBy: "michael-torres",
+    relatedLinks: [
+      { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
+      { href: "/compare/americas-rv-warranty-vs-no-repair-cost", title: "ARW vs No Repair Cost" },
+      { href: "/compare/wholesale-warranties-vs-no-repair-cost", title: "Wholesale vs No Repair Cost" },
+      { href: "/blog/dealership-vs-warranty-company-which-is-cheaper", title: "Dealership vs Warranty Company" },
+      { href: "/find-coverage", title: "Get Matched in ~60 Seconds" },
+    ],
+    sections: [
+      {
+        heading: "Don't Compare Price Alone",
+        content: [
+          "Two quotes can look identical until you line up what each contract actually pays for. A cheaper premium often means a higher deductible, a lower labor rate, narrower component lists, or weaker roadside support. A higher quote can still be the better deal if claims are easier and mobile repairs are included.",
+          "Print both quotes (or open them side by side) and fill in the checklist below. If a salesperson can't answer a line item, ask for the sample contract — then compare the paper, not the pitch.",
+        ],
+      },
+      {
+        heading: "1. Coverage Type and Component Lists",
+        content: [
+          "Confirm whether each plan is exclusionary (covers everything except listed exclusions) or named-component (covers only what's listed). Exclusionary usually costs more and covers more; named-component plans can look cheap until a slide motor or coach appliance fails and isn't on the list.",
+          "For motorhomes, check engine, transmission, and aftertreatment language. For travel trailers and fifth wheels, focus on slides, leveling, appliances, generators, and HVAC. If one quote is \"powertrain only\" and the other is full coach, you are not comparing the same product.",
+        ],
+      },
+      {
+        heading: "2. Deductible and Per-Visit Rules",
+        content: [
+          "Write down the deductible on each quote — and whether it applies per repair visit, per component, or per claim. A $100 deductible that resets every time a tech opens a bay adds up differently than a $250 deductible once per visit covering multiple approved items.",
+          "Ask whether diagnostic fees are covered after authorization. Some plans reimburse diagnosis only when the repair is approved; others leave you paying the shop to find the problem even when coverage applies.",
+        ],
+      },
+      {
+        heading: "3. Labor Rate Caps",
+        content: [
+          "Many contracts cap labor at a stated hourly rate or \"prevailing rate\" language. If Quote A caps labor at $125/hour and your local RV shop bills $175, you may owe the difference out of pocket — even on an \"approved\" claim.",
+          "Ask each provider what rate they typically authorize in your region and whether mobile tech labor is treated the same as shop labor. This single line item explains a lot of \"the warranty didn't cover what I expected\" complaints.",
+        ],
+      },
+      {
+        heading: "4. Mobile Mechanic and Repair Network",
+        content: [
+          "Can you use any licensed facility in the U.S. (and Canada, if you travel)? Is mobile mechanic service included, reimbursed up to a dollar limit, or only allowed when the RV is disabled? America's RV Warranty builds mobile support into plans; many price-focused quotes treat it as optional or limited.",
+          "If you boondock, full-time, or rarely sit near a dealer, mobile language matters as much as the premium. Put the trip-charge or mobile allowance next to each quote so you're not comparing apples to oranges.",
+        ],
+      },
+      {
+        heading: "5. Travel and Roadside Benefits",
+        content: [
+          "Some plans reimburse lodging, meals, or a rental vehicle while the RV is in the shop. Others sell roadside assistance as a separate add-on. Note what's included versus optional — and any day or dollar caps.",
+          "Good Sam ESP is known for travel expense benefits tied to its insurance-backed product. Direct service contracts vary widely. If travel reimbursement is a must-have, score it as a separate column; don't assume it's in every \"comprehensive\" quote.",
+        ],
+      },
+      {
+        heading: "6. Waiting Period, Eligibility, and Pre-Existing Conditions",
+        content: [
+          "Most plans include a waiting period before claims are eligible. Write down the number of days (and any mileage wait) for each quote. Buying today does not mean a breakdown tomorrow is covered.",
+          "Confirm age and mileage limits. Price-focused sellers like No Repair Cost often advertise model-year floors (for example, 2011+). Wholesale Warranties and others may allow older units with different terms. If your RV is near a cutoff, eligibility can matter more than a $200 premium difference.",
+        ],
+      },
+      {
+        heading: "7. Who Handles Claims — and Who Backs the Contract",
+        content: [
+          "Ask for the administrator name and whether claims are in-house or third-party. Ask for the insurance company that backs the contract and its rating. \"Same as the dealer\" marketing only helps if you can verify the underwriter and read matching contract language.",
+          "Providers that compete mainly on skipping dealer markup — including No Repair Cost — can still be legitimate options, but you should line up administrator, deductible, and exclusions against the dealer quote before assuming the products are identical. Our America's RV Warranty vs No Repair Cost and Wholesale Warranties vs No Repair Cost comparisons show how those tradeoffs look in practice.",
+        ],
+      },
+      {
+        heading: "8. Cancel, Transfer, and Payment Terms",
+        content: [
+          "Check cancellation refund rules (full vs prorated, fees, and how soon you must cancel). Check whether the plan transfers if you sell the RV — and whether transfer is free. These terms affect resale value and exit options if you regret the purchase.",
+          "Also note payment structure: pay-in-full discounts, monthly finance fees, and whether roadside or tire-and-wheel add-ons are bundled into the number you're staring at. Annualize financed quotes so a low monthly payment doesn't hide a higher total cost.",
+        ],
+      },
+      {
+        heading: "A Simple Side-by-Side Scorecard",
+        content: [
+          "For each quote, fill in: coverage type (exclusionary vs named), key systems covered, deductible + how it applies, labor rate / diagnostic rules, mobile allowance, travel/roadside included?, waiting period, eligibility limits, administrator + insurer, cancel/transfer terms, and total cost (or annualized financed cost).",
+          "Then decide with two questions: (1) Which plan actually covers the failures you fear most? (2) Which claims process would you rather use on the side of the road? Price is the tiebreaker — not the only column.",
+          "If you want a faster path than juggling PDFs, use our Get Matched quiz or start from the ranked provider list and open sample contracts for your top two.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What should I compare first on two RV warranty quotes?",
+        answer:
+          "Start with coverage type and component scope, then deductible rules and labor rate caps. Those three items explain most \"cheap quote\" surprises. Add mobile support and waiting period next if you travel often.",
+      },
+      {
+        question: "Is the cheaper RV warranty quote always worse?",
+        answer:
+          "Not always — but a lower premium usually trades something away: higher deductible, narrower coverage, slower claims, or weaker mobile benefits. Compare the contract lines, not just the total.",
+      },
+      {
+        question: "How do I know if two quotes are for the same coverage?",
+        answer:
+          "Match administrator (or underwriter), plan tier name, deductible, term length, and the sample contract's covered/excluded lists. Marketing that says \"same as the dealer\" is a starting claim — verify it on paper.",
+      },
+      {
+        question: "Should I compare dealer quotes to direct warranty companies?",
+        answer:
+          "Yes. Dealer F&I quotes often include markup. Get at least one direct quote for the same coverage level and compare side by side before you roll a warranty into your loan.",
+      },
+    ],
+  },
+  {
     slug: "how-to-read-rv-warranty-company-reviews",
     title: "How to Read RV Warranty Company Reviews (Without Getting Spooked)",
     description:
