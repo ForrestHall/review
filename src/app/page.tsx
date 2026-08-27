@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CompanyCard } from "@/components/CompanyCard";
 import { FAQ, homepageFaqs } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
+import { findCoverageHref } from "@/lib/attribution";
 import { getCompaniesSorted } from "@/data/companies";
 import { comparisons } from "@/data/comparisons";
 import { blogCategories, getRecentBlogPosts } from "@/data/blog";
@@ -59,7 +60,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/find-coverage"
+              href={findCoverageHref("home-hero-quiz")}
               className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-teal-50"
             >
               Get Matched

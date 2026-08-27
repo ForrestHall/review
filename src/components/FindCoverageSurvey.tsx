@@ -7,6 +7,7 @@ import {
   US_STATES,
   type ArwOption,
 } from "@/lib/arw";
+import { trackGenerateLead, trackQuizStep } from "@/lib/analytics";
 import { trackMetaLead } from "@/lib/meta";
 import { MakeCombobox } from "@/components/MakeCombobox";
 import { captureLeadAttribution, getLeadAttribution } from "@/lib/attribution";
@@ -41,15 +42,6 @@ const backBtn =
 
 const primaryBtn =
   "rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90 disabled:opacity-60";
-
-function trackQuizStep(step: string) {
-  if (typeof window === "undefined" || !("gtag" in window)) return;
-  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-  gtag?.("event", "quiz_step", {
-    quiz_step: step,
-    method: "find_coverage",
-  });
-}
 
 export function FindCoverageSurvey({
   classes,
@@ -86,7 +78,7 @@ export function FindCoverageSurvey({
   }, []);
 
   useEffect(() => {
-    trackQuizStep(step);
+    trackQuizStep(step, getLeadAttribution());
   }, [step]);
 
   const needsOdometer = rvClass ? isMotorhomeClass(rvClass) : false;
@@ -139,14 +131,6 @@ export function FindCoverageSurvey({
     setError("");
 
     const attribution = getLeadAttribution();
-    if (typeof window !== "undefined" && attribution && "gtag" in window) {
-      const gtag = (window as Window & { gtag?: (...args: unknown[]) => void })
-        .gtag;
-      gtag?.("event", "generate_lead", {
-        method: "find_coverage",
-        ...attribution,
-      });
-    }
 
     if (!apiEnabled) {
       finishToResult(false, true);
@@ -190,6 +174,7 @@ export function FindCoverageSurvey({
         return;
       }
 
+      trackGenerateLead(attribution);
       trackMetaLead();
       finishToResult(true, false);
     } catch {

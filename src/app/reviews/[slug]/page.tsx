@@ -12,6 +12,7 @@ import { getAuthorOrDefault } from "@/data/authors";
 import { getComparisonsForCompany } from "@/data/comparisons";
 import { companies, getCompaniesSorted, getCompany } from "@/data/companies";
 import { UserReviewSection } from "@/components/UserReviews";
+import { findCoverageHref, withOrganicUtms } from "@/lib/attribution";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { getUserReviewStats, getUserReviews } from "@/lib/user-reviews";
@@ -227,14 +228,14 @@ export default async function ReviewPage({ params }: Props) {
             {company.slug === "americas-rv-warranty" ? (
               <div className="ml-auto flex flex-wrap gap-2">
                 <Link
-                  href="/find-coverage"
+                  href={findCoverageHref("review-get-matched")}
                   className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
                 >
                   Get Matched
                 </Link>
                 {company.ctaUrl && (
                   <a
-                    href={company.ctaUrl}
+                    href={withOrganicUtms(company.ctaUrl, "review-get-quote")}
                     target="_blank"
                     rel="sponsored noopener noreferrer"
                     className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
@@ -371,14 +372,14 @@ export default async function ReviewPage({ params }: Props) {
           {company.slug === "americas-rv-warranty" ? (
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
-                href="/find-coverage"
+                href={findCoverageHref("review-get-matched")}
                 className="inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
               >
                 Get Matched
               </Link>
               {company.ctaUrl && (
                 <a
-                  href={company.ctaUrl}
+                  href={withOrganicUtms(company.ctaUrl, "review-get-quote")}
                   target="_blank"
                   rel="sponsored noopener noreferrer"
                   className="inline-block rounded-lg border border-brand px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"

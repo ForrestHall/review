@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { findCoverageHref } from "@/lib/attribution";
 
 const STORAGE_KEY = "rvr_exit_intent_quiz";
 
@@ -54,7 +55,7 @@ export function ExitIntentMatch() {
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href="/find-coverage"
+            href={findCoverageHref("exit-intent-quiz")}
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
             onClick={() => setOpen(false)}
           >

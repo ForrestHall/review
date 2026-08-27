@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { findCoverageHref, withOrganicUtms } from "@/lib/attribution";
 import type { CompanyReview } from "@/types";
 import { Rating } from "./Rating";
 
@@ -98,14 +99,14 @@ export function CompanyCard({ company, featured = false }: CompanyCardProps) {
         {isArw ? (
           <>
             <Link
-              href="/find-coverage"
+              href={findCoverageHref("review-get-matched")}
               className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
               Get Matched
             </Link>
             {company.ctaUrl && (
               <a
-                href={company.ctaUrl}
+                href={withOrganicUtms(company.ctaUrl, "review-get-quote")}
                 target="_blank"
                 rel="sponsored noopener noreferrer"
                 className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand hover:text-brand"

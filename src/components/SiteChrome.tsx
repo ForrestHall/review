@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
 import { usePathname } from "next/navigation";
+import { AttributionCapture } from "@/components/AttributionCapture";
 import { ExitIntentMatch } from "@/components/ExitIntentMatch";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -52,6 +54,9 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <AttributionCapture />
+      </Suspense>
       {ads ? <AdsHeader /> : <Header />}
       <main className="flex-1">{children}</main>
       {ads ? <AdsFooter /> : <Footer />}

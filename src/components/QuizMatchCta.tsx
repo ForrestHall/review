@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { findCoverageHref } from "@/lib/attribution";
 
 type QuizMatchCtaProps = {
   /** Optional context for slightly varied supporting copy */
@@ -20,7 +21,7 @@ export function QuizMatchCta({ variant = "default" }: QuizMatchCtaProps) {
         {support}
       </p>
       <Link
-        href="/find-coverage"
+        href={findCoverageHref("quiz-match-cta")}
         className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
       >
         Get Matched

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { findCoverageHref } from "@/lib/attribution";
 
 /** Mobile sticky CTA after ~30% scroll on long guide pages. */
 export function StickyGetMatched() {
@@ -27,7 +28,7 @@ export function StickyGetMatched() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur md:hidden">
       <Link
-        href="/find-coverage"
+        href={findCoverageHref("sticky-get-matched")}
         className="flex w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-white"
       >
         Get Matched — ~60 sec

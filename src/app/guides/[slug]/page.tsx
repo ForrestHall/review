@@ -13,6 +13,7 @@ import {
   guides,
   guideCategories,
 } from "@/data/guides";
+import { findCoverageHref } from "@/lib/attribution";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
@@ -158,7 +159,7 @@ export default async function GuidePage({ params }: Props) {
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
-              href="/find-coverage"
+              href={findCoverageHref("guide-get-matched")}
               className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
             >
               Get Matched

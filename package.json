@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
     "lint": "eslint",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "verify:ga4": "node scripts/verify-ga4-events.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
