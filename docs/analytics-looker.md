@@ -177,13 +177,19 @@ Do **not** export raw email/phone to BigQuery without a privacy review.
 
 ### URL presets
 
-**Facebook ad landing URL:**
+**Facebook ad — quiz direct:**
 
 ```
 https://www.rvwarrantyreview.com/find-coverage?utm_campaign=rvr&utm_source=Facebook&utm_medium=quiz-main
 ```
 
-Change `utm_medium` per creative (`quiz-video-v1`, etc.).
+**Facebook ad — rankings homepage (TBC-style hero):**
+
+```
+https://www.rvwarrantyreview.com/?utm_campaign=rvr&utm_source=Facebook&utm_medium=rankings-main
+```
+
+Change `utm_medium` per creative (`quiz-video-v1`, `rankings-carousel-v1`, etc.). Code helper: `buildAdLandingHref(path, medium)` in `src/lib/attribution.ts`.
 
 **Organic CTA (built in code via `findCoverageHref()`):**
 
@@ -193,12 +199,24 @@ Change `utm_medium` per creative (`quiz-video-v1`, etc.).
 
 Medium slugs: `header-get-matched`, `home-hero-quiz`, `sticky-get-matched`, `exit-intent-quiz`, `quiz-match-cta`, `review-get-matched`, `compare-get-matched`, `guide-get-matched`, `blog-get-matched`, `review-get-quote`.
 
-### How it works
+### Ad landing variants
 
-1. **Site-wide capture** — `AttributionCapture` reads UTM params + `gclid`/`fbclid` from the landing URL into `sessionStorage` (first-touch).
-2. **Organic links** — CTAs append ARW-aligned UTMs via `src/lib/attribution.ts`.
-3. **Quiz events** — `quiz_step` and `generate_lead` include stored attribution params in GA4.
-4. **Lead API** — `/api/arw-lead` forwards UTMs to Salesforce on successful submit.
+| `utm_medium` prefix | Variant | Landing page | Hero behavior |
+|---------------------|---------|--------------|---------------|
+| `quiz-*` | quiz | `/find-coverage` | Quiz-first (default) |
+| `rankings-*` | rankings | `/` homepage | “See Our #1 Pick” primary CTA |
+
+Variant is stored first-touch in `sessionStorage` via `src/lib/ad-variants.ts` and drives the homepage hero (`HomeHero`).
+
+### How it works (first-touch)
+
+1. **Site-wide capture** — `AttributionCapture` reads UTM params + `gclid`/`fbclid` from the landing URL into `sessionStorage`. **First non-empty value wins** for the session.
+2. **Click ID inference** — `fbclid` → `Facebook`, `gclid` → `Google` only when no explicit `utm_source` was captured.
+3. **Organic links** — CTAs append ARW-aligned UTMs in hrefs for link hygiene; they **do not** overwrite first-touch on quiz submit.
+4. **Quiz events** — `quiz_step` and `generate_lead` use stored first-touch attribution from `getLeadAttribution()`.
+5. **Lead API** — `/api/arw-lead` forwards UTMs to Salesforce on successful submit.
+
+**Testing note:** Use a fresh incognito window (or new tab) between Facebook vs organic tests — first-touch keeps the earliest source in the same session.
 
 ### Meta Pixel
 
@@ -215,9 +233,11 @@ Verify in [Meta Events Manager](https://business.facebook.com/events_manager) �
 
 ### Testing checklist
 
-1. **Facebook URL** — open ad URL with UTMs → complete quiz → check Salesforce UTM fields + GA4 Realtime (`generate_lead` with UTM params) + Meta Lead event
-2. **Organic CTA** — click "Get Matched" from homepage → same checks; `utm_source` should be `organic`
-3. **Direct visit** — `/find-coverage` with no params → lead still submits; UTM fields empty unless referrer click IDs present
+1. **Facebook quiz URL** — incognito → ad quiz URL → complete quiz → SF `UTM_Source__c=Facebook`, `utm_medium=quiz-main`
+2. **Facebook rankings URL** — incognito → rankings homepage URL → hero shows “See Our #1 Pick” → complete quiz → SF keeps `rankings-main`
+3. **Organic CTA** — incognito → click “Get Matched” from header → submit → `utm_source=organic`, medium matches CTA slug
+4. **Paid then internal** — Facebook landing → click site “Get Matched” (organic href) → submit still shows `Facebook` (first-touch)
+5. **Direct visit** — `/find-coverage` with no params → lead still submits; UTM fields empty unless click IDs present
 
 ---
 

@@ -1,19 +1,23 @@
 /** UTM capture + ARW-aligned link builders (campaign=rvr, kebab-case medium). */
 
+import { captureLandingVariant } from "@/lib/ad-variants";
+
 const STORAGE_KEY = "rvr_lead_attribution";
 
 /** Matches /quote/source/rvr/ and AWI advertiser token. */
 export const UTM_CAMPAIGN = "rvr";
 
-const ATTR_KEYS = [
+const UTM_KEYS = [
   "utm_source",
   "utm_medium",
   "utm_campaign",
   "utm_content",
   "utm_term",
-  "fbclid",
-  "gclid",
 ] as const;
+
+const CLICK_ID_KEYS = ["fbclid", "gclid"] as const;
+
+const ATTR_KEYS = [...UTM_KEYS, ...CLICK_ID_KEYS] as const;
 
 export type LeadAttribution = Partial<
   Record<(typeof ATTR_KEYS)[number], string>
@@ -40,6 +44,21 @@ export function findCoverageHref(medium: OrganicQuizMedium): string {
     utm_medium: medium,
   });
   return `/find-coverage?${params.toString()}`;
+}
+
+/** Facebook / paid ad landing URL builder. */
+export function buildAdLandingHref(
+  path: string,
+  medium: string,
+  source = "Facebook"
+): string {
+  const params = new URLSearchParams({
+    utm_campaign: UTM_CAMPAIGN,
+    utm_source: source,
+    utm_medium: medium,
+  });
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${normalized}?${params.toString()}`;
 }
 
 /** Append ARW-aligned UTMs to an external quote URL. */
@@ -70,24 +89,39 @@ function applyClickIdDefaults(
   return next;
 }
 
+function readAttributionFromSearch(
+  search: string,
+  existing: LeadAttribution = {}
+): LeadAttribution {
+  const params = new URLSearchParams(search);
+  const next: LeadAttribution = { ...existing };
+
+  for (const key of UTM_KEYS) {
+    const value = params.get(key);
+    if (value && !next[key]) {
+      next[key] = value.slice(0, 200);
+    }
+  }
+
+  for (const key of CLICK_ID_KEYS) {
+    const value = params.get(key);
+    if (value && !next[key]) {
+      next[key] = value.slice(0, 200);
+    }
+  }
+
+  return applyClickIdDefaults(next);
+}
+
 /** Persist UTM / click IDs from the landing URL (first-touch per session). */
 export function captureLeadAttribution() {
   if (typeof window === "undefined") return;
   try {
-    const params = new URLSearchParams(window.location.search);
     const existing = getLeadAttribution() ?? {};
-    const next: LeadAttribution = { ...existing };
-    let updated = false;
-    for (const key of ATTR_KEYS) {
-      const value = params.get(key);
-      if (value && !next[key]) {
-        next[key] = value.slice(0, 200);
-        updated = true;
-      }
-    }
-    const merged = applyClickIdDefaults(next);
-    if (updated || Object.keys(merged).length > 0) {
+    const merged = readAttributionFromSearch(window.location.search, existing);
+    if (Object.keys(merged).length > 0) {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      captureLandingVariant(merged.utm_medium);
     }
   } catch {
     /* ignore */

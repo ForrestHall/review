@@ -10,7 +10,10 @@ import {
 import { trackGenerateLead, trackQuizStep } from "@/lib/analytics";
 import { trackMetaLead } from "@/lib/meta";
 import { MakeCombobox } from "@/components/MakeCombobox";
-import { captureLeadAttribution, getLeadAttribution } from "@/lib/attribution";
+import {
+  captureLeadAttribution,
+  getLeadAttribution,
+} from "@/lib/attribution";
 
 type FindCoverageSurveyProps = {
   classes: ArwOption[];
