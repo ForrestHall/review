@@ -4,10 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { trackExitIntentClick, trackExitIntentShow } from "@/lib/analytics";
-import { findCoverageHref } from "@/lib/attribution";
+import { buildFindCoverageHref, captureLeadAttribution, getLeadAttribution } from "@/lib/attribution";
 
 const STORAGE_KEY = "rvr_exit_intent_quiz";
-const EXIT_INTENT_MEDIUM = "exit-intent-quiz";
 
 /**
  * Once per browser session: offer the quiz when the cursor leaves toward the
@@ -16,6 +15,12 @@ const EXIT_INTENT_MEDIUM = "exit-intent-quiz";
 export function ExitIntentMatch() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [quizHref, setQuizHref] = useState("/find-coverage");
+
+  useEffect(() => {
+    captureLeadAttribution();
+    setQuizHref(buildFindCoverageHref(getLeadAttribution()));
+  }, [pathname]);
 
   useEffect(() => {
     if (pathname === "/find-coverage" || pathname.startsWith("/find-coverage/")) {
@@ -58,10 +63,10 @@ export function ExitIntentMatch() {
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href={findCoverageHref(EXIT_INTENT_MEDIUM)}
+            href={quizHref}
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
             onClick={() => {
-              trackExitIntentClick(EXIT_INTENT_MEDIUM);
+              trackExitIntentClick(getLeadAttribution()?.utm_medium ?? "exit-intent");
               setOpen(false);
             }}
           >

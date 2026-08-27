@@ -1,5 +1,4 @@
 import type { BlogPost } from "@/types";
-import { findCoverageHref } from "@/lib/attribution";
 
 export const blogCategories = {
   claims: "Claims & Service",
@@ -24,7 +23,7 @@ export const blogPosts: BlogPost[] = [
       { href: "/guides/how-to-shop-for-an-rv-warranty", title: "How to Shop for an RV Warranty" },
       { href: "/compare/americas-rv-warranty-vs-wholesale-warranties", title: "ARW vs Wholesale Warranties" },
       { href: "/blog/dealership-vs-warranty-company-which-is-cheaper", title: "Dealership vs Warranty Company" },
-      { href: findCoverageHref("blog-get-matched"), title: "Get Matched in ~60 Seconds" },
+      { href: "/find-coverage", title: "Get Matched in ~60 Seconds" },
     ],
     sections: [
       {

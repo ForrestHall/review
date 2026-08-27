@@ -9,7 +9,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { comparisons, getComparison } from "@/data/comparisons";
 import { getCompany } from "@/data/companies";
 import { getAuthorOrDefault } from "@/data/authors";
-import { findCoverageHref, withOrganicUtms } from "@/lib/attribution";
+import { FindCoverageLink, QuoteLink } from "@/components/AttributionLinks";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
@@ -113,20 +113,17 @@ export default async function ComparePage({ params }: Props) {
             {winner.ctaUrl && (
               winner.slug === "americas-rv-warranty" ? (
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Link
-                    href={findCoverageHref("compare-get-matched")}
-                    className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-                  >
+                  <FindCoverageLink className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90">
                     Get Matched
-                  </Link>
-                  <a
-                    href={withOrganicUtms(winner.ctaUrl, "review-get-quote")}
+                  </FindCoverageLink>
+                  <QuoteLink
+                    quoteUrl={winner.ctaUrl}
                     target="_blank"
                     rel="sponsored noopener noreferrer"
                     className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-colors hover:bg-brand hover:text-white"
                   >
                     Get Quote — {winner.name}
-                  </a>
+                  </QuoteLink>
                 </div>
               ) : winner.ctaUrl.startsWith("/") ? (
                 <Link
@@ -200,22 +197,19 @@ export default async function ComparePage({ params }: Props) {
           </h2>
           <p className="mt-3 leading-relaxed text-muted">{comparison.verdict}</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link
-              href={findCoverageHref("compare-get-matched")}
-              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90"
-            >
+            <FindCoverageLink className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">
               Get Matched
-            </Link>
+            </FindCoverageLink>
             {winner?.ctaUrl &&
               winner.slug === "americas-rv-warranty" && (
-                <a
-                  href={withOrganicUtms(winner.ctaUrl, "review-get-quote")}
+                <QuoteLink
+                  quoteUrl={winner.ctaUrl}
                   target="_blank"
                   rel="sponsored noopener noreferrer"
                   className="rounded-lg border border-brand px-4 py-2 text-sm font-semibold text-brand hover:bg-brand hover:text-white"
                 >
                   Get Quote — {winner.name}
-                </a>
+                </QuoteLink>
               )}
             {winner?.ctaUrl &&
               winner.slug !== "americas-rv-warranty" &&

@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getLandingVariant, type AdLandingVariant } from "@/lib/ad-variants";
-import { captureLeadAttribution, findCoverageHref } from "@/lib/attribution";
+import {
+  buildFindCoverageHref,
+  captureLeadAttribution,
+  getLeadAttribution,
+} from "@/lib/attribution";
 
 type HomeHeroProps = {
   year: number;
@@ -11,10 +15,13 @@ type HomeHeroProps = {
 
 export function HomeHero({ year }: HomeHeroProps) {
   const [variant, setVariant] = useState<AdLandingVariant | null>(null);
+  const [quizHref, setQuizHref] = useState("/find-coverage");
 
   useEffect(() => {
     captureLeadAttribution();
+    const attribution = getLeadAttribution();
     setVariant(getLandingVariant());
+    setQuizHref(buildFindCoverageHref(attribution));
   }, []);
 
   const isRankings = variant === "rankings";
@@ -43,7 +50,7 @@ export function HomeHero({ year }: HomeHeroProps) {
                 See Our #1 Pick
               </Link>
               <Link
-                href={findCoverageHref("home-hero-quiz")}
+                href={quizHref}
                 className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
                 Get Matched in ~60 sec
@@ -52,7 +59,7 @@ export function HomeHero({ year }: HomeHeroProps) {
           ) : (
             <>
               <Link
-                href={findCoverageHref("home-hero-quiz")}
+                href={quizHref}
                 className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-brand transition-colors hover:bg-teal-50"
               >
                 Get Matched

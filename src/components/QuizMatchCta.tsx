@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { findCoverageHref } from "@/lib/attribution";
+import { FindCoverageLink } from "@/components/AttributionLinks";
 
 type QuizMatchCtaProps = {
   /** Optional context for slightly varied supporting copy */
@@ -20,12 +19,9 @@ export function QuizMatchCta({ variant = "default" }: QuizMatchCtaProps) {
       <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
         {support}
       </p>
-      <Link
-        href={findCoverageHref("quiz-match-cta")}
-        className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-      >
+      <FindCoverageLink className="mt-5 inline-block rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90">
         Get Matched
-      </Link>
+      </FindCoverageLink>
     </section>
   );
 }

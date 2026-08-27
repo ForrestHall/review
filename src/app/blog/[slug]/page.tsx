@@ -13,7 +13,7 @@ import {
   getBlogPost,
   getBlogPostsSorted,
 } from "@/data/blog";
-import { findCoverageHref } from "@/lib/attribution";
+import { FindCoverageLink } from "@/components/AttributionLinks";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
@@ -161,12 +161,9 @@ export default async function BlogPostPage({ params }: Props) {
             companies — or request a free quote from our top pick.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link
-              href={findCoverageHref("blog-get-matched")}
-              className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
-            >
+            <FindCoverageLink className="inline-block rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90">
               Get Matched
-            </Link>
+            </FindCoverageLink>
             <Link
               href="/#compare"
               className="inline-block rounded-lg border border-brand px-5 py-2.5 text-sm font-semibold text-brand hover:bg-brand hover:text-white"

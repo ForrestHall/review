@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { findCoverageHref } from "@/lib/attribution";
+import { FindCoverageLink } from "@/components/AttributionLinks";
 import { SITE } from "@/lib/site";
 
 const navLinks = [
@@ -40,12 +40,9 @@ export function Header() {
           ))}
         </nav>
 
-        <Link
-          href={findCoverageHref("header-get-matched")}
-          className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
-        >
+        <FindCoverageLink className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand/90">
           Get Matched
-        </Link>
+        </FindCoverageLink>
       </div>
     </header>
   );

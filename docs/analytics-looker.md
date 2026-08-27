@@ -168,76 +168,62 @@ Do **not** export raw email/phone to BigQuery without a privacy review.
 
 ## 6. UTM tracking & Meta Pixel
 
-### Convention (ARW-aligned)
+### Passthrough model (TBC-style)
 
-| Field | Organic site CTAs | Facebook ads |
-|-------|-------------------|--------------|
-| `utm_campaign` | `rvr` | `rvr` |
-| `utm_source` | `organic` | `Facebook` |
-| `utm_content` | (not set) | **Ad landing slug** — `quiz-main`, `rankings-main` (first-touch) |
-| `utm_medium` | CTA slug (e.g. `header-get-matched`) | Starts as ad slug; updates to last CTA clicked |
+You control UTMs on your ad/landing URLs. The site **captures them first-touch** and **passes them through** to every quiz CTA and ARW quote link — no hardcoded `rvr` / `organic` overrides.
 
-**Salesforce:** `LeadSource` stays `rvr`. Use **`UTM_Content__c`** to compare homepage vs quiz ad landings; **`UTM_Medium__c`** for the last CTA that drove quiz entry (e.g. `exit-intent-quiz`).
-
-### URL presets
-
-**Facebook ad — quiz direct:**
+**Example:** land on:
 
 ```
-https://www.rvwarrantyreview.com/find-coverage?utm_campaign=rvr&utm_source=Facebook&utm_medium=quiz-main&utm_content=quiz-main
+https://www.rvwarrantyreview.com/?utm_campaign=leads&utm_source=facebook&utm_medium=tbc_promo
 ```
 
-**Facebook ad — rankings homepage (TBC-style hero):**
+- **Get Matched** → `/find-coverage?utm_campaign=leads&utm_source=facebook&utm_medium=tbc_promo`
+- **Get Quote (ARW)** → `https://www.americasrvwarranty.com/quote/source/rvr/...?utm_campaign=leads&utm_source=facebook&utm_medium=tbc_promo`
+
+Same UTMs are sent to Salesforce on quiz submit via `/api/arw-lead`.
+
+| Behavior | Detail |
+|----------|--------|
+| Capture | First-touch per session (`AttributionCapture` + `sessionStorage`) |
+| Quiz CTAs | `FindCoverageLink` reads stored UTMs client-side |
+| ARW quote CTAs | `QuoteLink` appends stored UTMs to the quote URL |
+| No landing UTMs | CTAs link to plain `/find-coverage` and base ARW URL |
+| `fbclid` / `gclid` | Captured for analytics/submit; not appended to CTA hrefs |
+
+**Salesforce:** `LeadSource` stays `rvr`. Campaign detail in `UTM_Campaign__c`, `UTM_Source__c`, `UTM_Medium__c`, etc.
+
+### Example ad URLs
+
+**Homepage LP:**
 
 ```
-https://www.rvwarrantyreview.com/?utm_campaign=rvr&utm_source=Facebook&utm_medium=rankings-main&utm_content=rankings-main
+https://www.rvwarrantyreview.com/?utm_campaign=leads&utm_source=facebook&utm_medium=homepage_v1
 ```
 
-Change slugs per creative (`quiz-video-v1`, `rankings-carousel-v1`, etc.). Code helper: `buildAdLandingHref(path, medium)` sets both `utm_medium` and `utm_content`.
-
-### Differentiating ad tests in Salesforce
-
-| Ad test | Landing URL | `UTM_Content__c` (ad landing) | `UTM_Medium__c` (conversion CTA) |
-|---------|-------------|-------------------------------|----------------------------------|
-| Quiz direct | `/find-coverage?...&utm_content=quiz-main` | `quiz-main` | `quiz-main` (or last CTA if they navigated) |
-| Rankings homepage | `/?...&utm_content=rankings-main` | `rankings-main` | Last quiz CTA (e.g. `exit-intent-quiz`, `home-hero-quiz`) |
-
-Filter Looker/SF reports on **`UTM_Content__c`** to compare ad landing performance; use **`UTM_Medium__c`** for CTA-level conversion analysis.
-
-**Organic CTA (built in code via `findCoverageHref()`):**
+**Quiz direct:**
 
 ```
-/find-coverage?utm_campaign=rvr&utm_source=organic&utm_medium=home-hero-quiz
+https://www.rvwarrantyreview.com/find-coverage?utm_campaign=leads&utm_source=facebook&utm_medium=quiz_v1
 ```
 
-Medium slugs: `header-get-matched`, `home-hero-quiz`, `sticky-get-matched`, `exit-intent-quiz` (exit-intent / “last chance” modal), `quiz-match-cta`, `review-get-matched`, `compare-get-matched`, `guide-get-matched`, `blog-get-matched`, `review-get-quote`.
+Use any values you want — the site passes them through unchanged.
 
-### Ad landing variants
+### Homepage hero variants (optional)
 
-| `utm_medium` prefix | Variant | Landing page | Hero behavior |
-|---------------------|---------|--------------|---------------|
-| `quiz-*` | quiz | `/find-coverage` | Quiz-first (default) |
-| `rankings-*` | rankings | `/` homepage | “See Our #1 Pick” primary CTA |
+If `utm_medium` starts with `rankings-`, the homepage hero switches to rankings-first copy. Prefix `quiz-` maps to quiz variant. Custom mediums (e.g. `tbc_promo`) use the default hero; UTMs still passthrough on CTAs.
 
-Variant is stored first-touch in `sessionStorage` via `src/lib/ad-variants.ts` and drives the homepage hero (`HomeHero`).
+### GA4 exit-intent events
 
-### How it works (hybrid attribution)
+- `exit_intent_show` — modal opens
+- `exit_intent_click` — Get Matched clicked (uses your stored `utm_medium`)
 
-| Field | Policy |
-|-------|--------|
-| `utm_source`, `utm_campaign`, `utm_term` | First-touch — acquisition channel sticks |
-| **`utm_content`** | **First-touch — ad landing slug** (`quiz-main`, `rankings-main`); not set for organic |
-| `fbclid`, `gclid` | First-touch |
-| **`utm_medium`** | **Last-touch** when present in URL — which CTA drove the quiz |
+### Testing checklist
 
-1. **Site-wide capture** — `AttributionCapture` reads UTM params + `gclid`/`fbclid` into `sessionStorage`.
-2. **Click ID inference** — `fbclid` → `Facebook`, `gclid` → `Google` only when no explicit `utm_source` was captured.
-3. **Organic CTAs** — hrefs append UTMs; `utm_medium` updates on each tagged quiz entry (e.g. exit-intent modal → `exit-intent-quiz`).
-4. **Exit-intent modal** — links to `/find-coverage?...&utm_medium=exit-intent-quiz`; GA4 fires `exit_intent_show` and `exit_intent_click`.
-5. **Quiz events** — `quiz_step` and `generate_lead` use stored attribution from `getLeadAttribution()`.
-6. **Lead API** — `/api/arw-lead` forwards UTMs to Salesforce on successful submit.
-
-**Testing note:** Use a fresh incognito window when comparing acquisition sources. `utm_source` is first-touch; `utm_medium` reflects the last CTA clicked before quiz entry.
+1. **Custom LP UTMs** — incognito → `/?utm_campaign=test&utm_source=test&utm_medium=test` → hover Get Matched href → should include `test` params, not `rvr`/`organic`
+2. **ARW quote** — same session → Get Quote href should include same UTMs on `americasrvwarranty.com`
+3. **Quiz submit** — complete funnel → Salesforce UTM fields match landing values
+4. **No UTMs** — direct visit → CTAs have no UTM query string; lead still submits
 
 ### Meta Pixel
 
@@ -252,16 +238,6 @@ NEXT_PUBLIC_META_PIXEL_ID=1086705430359596
 
 Verify in [Meta Events Manager](https://business.facebook.com/events_manager) → Test Events while submitting a test lead on `/find-coverage`.
 
-### Testing checklist
-
-1. **Facebook quiz URL** — incognito → ad quiz URL → complete quiz → SF `UTM_Source__c=Facebook`, `utm_medium=quiz-main`
-2. **Facebook rankings URL** — incognito → rankings homepage URL → hero shows “See Our #1 Pick” → complete quiz → SF source `Facebook`, medium `rankings-main` (or last CTA clicked)
-3. **Organic CTA** — incognito → click “Get Matched” from header → submit → `utm_source=organic`, medium `header-get-matched`
-4. **Exit-intent modal** — incognito → homepage → trigger modal (mouse to top) → Get Matched → submit → SF medium `exit-intent-quiz`; GA4 `exit_intent_show` + `exit_intent_click`
-5. **Paid then exit intent** — Facebook rankings URL → exit-intent Get Matched → submit → SF content `rankings-main`, medium `exit-intent-quiz`, source `Facebook`
-6. **Quiz ad direct** — Facebook quiz URL → complete quiz → SF content and medium both `quiz-main`
-7. **Direct visit** — `/find-coverage` with no params → lead still submits; UTM fields empty unless click IDs present
-
 ---
 
 ## Troubleshooting
@@ -273,3 +249,4 @@ Verify in [Meta Events Manager](https://business.facebook.com/events_manager) �
 | UTM columns empty in Looker Studio | Register custom dimensions in GA4; wait 24–48h |
 | Quiz step dimension missing | Register `quiz_step` custom dimension in GA4 |
 | GSC connector unavailable | Verify site in Search Console with same Google account |
+| CTAs show wrong UTMs | Land with UTMs first in a fresh session; check href after page loads (client-side) |
