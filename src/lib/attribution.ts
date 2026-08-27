@@ -7,13 +7,17 @@ const STORAGE_KEY = "rvr_lead_attribution";
 /** Matches /quote/source/rvr/ and AWI advertiser token. */
 export const UTM_CAMPAIGN = "rvr";
 
-const UTM_KEYS = [
+const FIRST_TOUCH_UTM = [
   "utm_source",
-  "utm_medium",
   "utm_campaign",
   "utm_content",
   "utm_term",
 ] as const;
+
+/** Last-touch when present in URL — tracks which CTA drove the quiz. */
+const LAST_TOUCH_UTM = ["utm_medium"] as const;
+
+const UTM_KEYS = [...FIRST_TOUCH_UTM, ...LAST_TOUCH_UTM] as const;
 
 const CLICK_ID_KEYS = ["fbclid", "gclid"] as const;
 
@@ -46,7 +50,7 @@ export function findCoverageHref(medium: OrganicQuizMedium): string {
   return `/find-coverage?${params.toString()}`;
 }
 
-/** Facebook / paid ad landing URL builder. */
+/** Facebook / paid ad landing URL builder. Sets utm_content to match medium so SF can distinguish homepage vs quiz ad landings (first-touch). */
 export function buildAdLandingHref(
   path: string,
   medium: string,
@@ -56,9 +60,29 @@ export function buildAdLandingHref(
     utm_campaign: UTM_CAMPAIGN,
     utm_source: source,
     utm_medium: medium,
+    utm_content: medium,
   });
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${normalized}?${params.toString()}`;
+}
+
+function isAdLandingMedium(medium: string): boolean {
+  return medium.startsWith("quiz") || medium.startsWith("rankings");
+}
+
+/** Lock first-touch utm_content to the ad landing slug (homepage vs quiz). */
+function preserveAdLandingContent(
+  existing: LeadAttribution,
+  merged: LeadAttribution,
+  search: string
+): LeadAttribution {
+  if (existing.utm_content || merged.utm_content) return merged;
+  if (new URLSearchParams(search).get("utm_content")) return merged;
+  const landingMedium = existing.utm_medium ?? merged.utm_medium;
+  if (landingMedium && isAdLandingMedium(landingMedium)) {
+    return { ...merged, utm_content: landingMedium };
+  }
+  return merged;
 }
 
 /** Append ARW-aligned UTMs to an external quote URL. */
@@ -96,9 +120,16 @@ function readAttributionFromSearch(
   const params = new URLSearchParams(search);
   const next: LeadAttribution = { ...existing };
 
-  for (const key of UTM_KEYS) {
+  for (const key of FIRST_TOUCH_UTM) {
     const value = params.get(key);
     if (value && !next[key]) {
+      next[key] = value.slice(0, 200);
+    }
+  }
+
+  for (const key of LAST_TOUCH_UTM) {
+    const value = params.get(key);
+    if (value) {
       next[key] = value.slice(0, 200);
     }
   }
@@ -113,15 +144,18 @@ function readAttributionFromSearch(
   return applyClickIdDefaults(next);
 }
 
-/** Persist UTM / click IDs from the landing URL (first-touch per session). */
+/** Persist UTM / click IDs from the landing URL (hybrid: first-touch source, last-touch medium). */
 export function captureLeadAttribution() {
   if (typeof window === "undefined") return;
   try {
     const existing = getLeadAttribution() ?? {};
-    const merged = readAttributionFromSearch(window.location.search, existing);
+    let merged = readAttributionFromSearch(window.location.search, existing);
+    merged = preserveAdLandingContent(existing, merged, window.location.search);
     if (Object.keys(merged).length > 0) {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-      captureLandingVariant(merged.utm_medium);
+      captureLandingVariant(
+        existing.utm_content ?? existing.utm_medium ?? merged.utm_content ?? merged.utm_medium
+      );
     }
   } catch {
     /* ignore */

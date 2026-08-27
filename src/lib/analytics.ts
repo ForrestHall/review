@@ -42,3 +42,18 @@ export function trackGenerateLead(attribution: Ga4LeadAttribution | null) {
     ...(attribution ?? {}),
   });
 }
+
+/** Fires when the exit-intent modal opens (once per session). */
+export function trackExitIntentShow() {
+  callGtag("event", "exit_intent_show", {
+    method: "find_coverage",
+  });
+}
+
+/** Fires when the user clicks Get Matched in the exit-intent modal. */
+export function trackExitIntentClick(ctaMedium: string) {
+  callGtag("event", "exit_intent_click", {
+    method: "find_coverage",
+    cta_medium: ctaMedium,
+  });
+}

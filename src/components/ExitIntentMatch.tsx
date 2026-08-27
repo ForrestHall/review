@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { trackExitIntentClick, trackExitIntentShow } from "@/lib/analytics";
 import { findCoverageHref } from "@/lib/attribution";
 
 const STORAGE_KEY = "rvr_exit_intent_quiz";
+const EXIT_INTENT_MEDIUM = "exit-intent-quiz";
 
 /**
  * Once per browser session: offer the quiz when the cursor leaves toward the
@@ -27,6 +29,7 @@ export function ExitIntentMatch() {
       if (sessionStorage.getItem(STORAGE_KEY)) return;
       sessionStorage.setItem(STORAGE_KEY, "1");
       setOpen(true);
+      trackExitIntentShow();
     }
 
     document.addEventListener("mouseout", onMouseOut);
@@ -55,9 +58,12 @@ export function ExitIntentMatch() {
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href={findCoverageHref("exit-intent-quiz")}
+            href={findCoverageHref(EXIT_INTENT_MEDIUM)}
             className="rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand/90"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              trackExitIntentClick(EXIT_INTENT_MEDIUM);
+              setOpen(false);
+            }}
           >
             Get Matched
           </Link>
