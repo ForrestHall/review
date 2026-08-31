@@ -753,25 +753,13 @@ export function FindCoverageSurvey({
           </div>
 
           <div className="overflow-hidden rounded-xl bg-[#1e4a8c] px-4 py-8 text-center">
-            <div className="mx-auto inline-flex max-w-xs flex-col items-center rounded-2xl border-4 border-emerald-500 bg-white px-6 py-4 shadow-lg">
-              <svg
-                className="h-14 w-24 text-[#1e4a8c]"
-                viewBox="0 0 96 48"
-                fill="currentColor"
-                aria-hidden
-              >
-                <rect x="8" y="18" width="56" height="22" rx="4" />
-                <rect x="64" y="24" width="24" height="16" rx="3" />
-                <circle cx="24" cy="42" r="6" fill="#334155" />
-                <circle cx="72" cy="42" r="6" fill="#334155" />
-              </svg>
-              <p className="mt-2 text-lg font-extrabold uppercase tracking-wide text-emerald-700">
-                America&apos;s RV
-              </p>
-              <p className="-mt-0.5 w-full rounded-sm bg-[#1e4a8c] px-3 py-1 text-sm font-bold uppercase italic tracking-wide text-white">
-                Warranty
-              </p>
-            </div>
+            <img
+              src="/images/americas-rv-warranty-logo.png"
+              alt="America's RV Warranty"
+              width={250}
+              height={181}
+              className="mx-auto h-auto w-44 sm:w-52"
+            />
           </div>
 
           <MatchStars />
