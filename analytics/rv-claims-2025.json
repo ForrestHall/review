@@ -1,0 +1,93 @@
+{
+    "reportingPeriod": {
+        "label": "Calendar 2025",
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+    },
+    "filter": "RV warranty Cases only (TRUCKING_WARRANTY__c and MARINE_WARRANTY__c excluded); Claim_Paid_Date__c in 2025; Claim_Payment_Amount__c > 0",
+    "exportedAt": "2026-08-31T16:21:44+00:00",
+    "summary": {
+        "count": 1494,
+        "totalPaid": 2426288.28,
+        "avgPaid": 1624.02,
+        "maxPaid": 10788.5,
+        "claimsPerDay": 4.1
+    },
+    "claimsOver3000": {
+        "count": 197,
+        "totalPaid": 852625.01
+    },
+    "topClaims": [
+        {
+            "caseNumber": "00009556",
+            "paidDate": "2025-10-24",
+            "amount": 10788.5,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00009443",
+            "paidDate": "2025-12-05",
+            "amount": 10687.18,
+            "rvClass": "Fifth Wheel TRL",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00008573",
+            "paidDate": "2025-09-30",
+            "amount": 8846,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00008717",
+            "paidDate": "2025-09-26",
+            "amount": 8806.62,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00010262",
+            "paidDate": "2025-12-05",
+            "amount": 8659.31,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00006325",
+            "paidDate": "2025-03-25",
+            "amount": 8543.56,
+            "rvClass": "Class C MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00009139",
+            "paidDate": "2025-10-10",
+            "amount": 8315.43,
+            "rvClass": "Fifth Wheel TRL",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00005817",
+            "paidDate": "2025-01-20",
+            "amount": 8252.74,
+            "rvClass": "Fifth Wheel TRL",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00008151",
+            "paidDate": "2025-09-30",
+            "amount": 8243.95,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        },
+        {
+            "caseNumber": "00008752",
+            "paidDate": "2025-12-12",
+            "amount": 8181.76,
+            "rvClass": "Class A MTR",
+            "resolution": "Partially Approved"
+        }
+    ],
+    "sourceNote": "Salesforce Case records, America RV Warranty administrator, RV product lines only"
+}

@@ -10,6 +10,115 @@ export const blogCategories = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "are-rv-extended-warranties-worth-it",
+    title: "Are RV Extended Warranties Worth It? What 1,531 Real Paid Claims Tell Us",
+    description:
+      "Are RV extended warranties worth it? We analyzed 1,531 paid RV warranty claims in Calendar 2025 (~$2.6M authorized). See typical repair costs, largest payouts, and when coverage makes sense.",
+    category: "cost",
+    publishedAt: "2026-08-31",
+    updatedAt: "2026-08-31",
+    readTime: 10,
+    reviewedBy: "michael-torres",
+    relatedLinks: [
+      {
+        href: "/guides/is-an-extended-rv-warranty-worth-it",
+        title: "Is an Extended RV Warranty Worth It?",
+      },
+      {
+        href: "/blog/how-to-file-an-rv-warranty-claim",
+        title: "How to File an RV Warranty Claim",
+      },
+      { href: "/how-we-review", title: "How We Review (Methodology)" },
+      { href: "/find-coverage", title: "Get Matched in ~60 Seconds" },
+    ],
+    sections: [
+      {
+        heading: "Are RV Extended Warranties Worth It? (The Short Answer)",
+        content: [
+          "There is no one-size-fits-all yes — but paid claims data makes the tradeoff clearer than marketing slogans. In Calendar 2025, we counted 1,531 paid RV warranty claims totaling about $2.62 million in authorized repair payments. That is real money moving from an administrator to repair facilities — not hypothetical coverage.",
+          "An RV extended warranty is more likely worth it if you cannot comfortably absorb a $10,000–$35,000 coach, chassis, or powertrain repair, you travel or full-time frequently, or you want predictable costs instead of surprise shop bills. It is less likely worth it if your manufacturer warranty still covers you, you keep a strong emergency fund, or you are shopping a cheap plan with a weak claims reputation.",
+          "The data does not prove every owner saves more than they pay in premium. It shows breakdowns happen at scale and tail-risk repairs — especially on Class A motorhomes and large towables — can dwarf a year of coverage cost. That is the case most buyers underestimate.",
+        ],
+      },
+      {
+        heading: "Why We Analyzed Real RV Claim Data",
+        content: [
+          "Most \"worth it\" articles list pros and cons without numbers. RV owners deserve better: primary payment records from a major warranty administrator, aggregated so you can see what actually gets paid.",
+          "We counted paid RV Cases with a payment date and amount in Calendar 2025. Every statistic below comes from that dataset unless noted otherwise.",
+        ],
+      },
+      {
+        heading: "How We Got These Numbers",
+        content: [
+          "We pulled paid RV warranty Case records from a major administrator for Calendar 2025 — January 1 through December 31 — counting only claims with a payment date and amount greater than zero. That yielded 1,531 qualifying paid claims.",
+          "Amounts reflect authorized payments recorded on the Case at payout — not shop estimates or denied lines. Many resolutions in the sample are \"Partially Approved,\" which is normal when deductibles, labor caps, or exclusions apply.",
+          "This is aggregate data across many RV owners and plan tiers — not a survey of one dealer. RV Warranty Review performed the analysis for editorial use; this is not financial advice and individual results vary.",
+        ],
+      },
+      {
+        heading: "What 1,531 Paid RV Claims Show",
+        content: [
+          "In Calendar 2025, paid RV claims averaged about $1,710 each, with $2,618,086 in total authorized payments across the year. That works out to roughly four paid claims per day — breakdowns are routine, not rare edge cases.",
+          "214 claims exceeded $3,000 each, combining for about $1,013,001 — nearly two-fifths of all dollars paid in claims over that threshold alone. A long tail of smaller repairs adds up; a shorter list of very large ones drives fear — and budget risk.",
+          "The biggest payouts tell the story. The largest single authorized payment was $35,396 — a major engine repair on a Class A motorhome. Several other powertrain and coach repairs in the same period exceeded $10,000, including fifth wheels and diesel coaches.",
+        ],
+      },
+      {
+        heading: "Tail Risk: When One Repair Dwarfs a Year of Premium",
+        content: [
+          "Many RV extended warranties cost roughly $2,000–$5,000 per year depending on unit type, age, and coverage tier — sometimes more on large Class A coaches. The largest paid claim in our dataset ($35,396 on an engine repair) exceeds what a lot of owners pay for six or seven years of coverage on a single approved repair.",
+          "That is the honest \"worth it\" argument: not that you will always come out ahead on premium math, but that one coach or powertrain failure can erase years of payments — or your savings — in a single visit to a qualified shop.",
+          "If a $1,700 average repair would already sting, a single five-figure payout — and occasionally one in the $30,000+ range on major powertrain work — is the scenario extended coverage is designed to soften, provided you buy from an administrator that actually pays claims and you follow pre-authorization rules.",
+        ],
+      },
+      {
+        heading: "When Coverage Is More Likely Worth It",
+        content: [
+          "Older RVs and heavy-use owners benefit most when factory coverage is gone and failure rates climb. Full-timers and long seasonal travelers face more shop visits simply by mileage and hours on coach systems.",
+          "Choose administrators with in-house claims teams, clear pre-auth steps, and published sample contracts — the same qualities we score in our reviews. A cheap plan that denies legitimate coach repairs is not worth any price.",
+          "If you would need financing or credit cards to cover a $10,000+ repair, fixed deductible exposure is often easier to plan than an open-ended shop bill.",
+        ],
+      },
+      {
+        heading: "When an RV Warranty May Not Be Worth It",
+        content: [
+          "Skip or delay if your manufacturer warranty still covers major systems, you maintain a dedicated repair reserve, or you use the RV infrequently and can self-insure.",
+          "A warranty is also a poor buy when the administrator has a pattern of slow approvals, narrow component lists, or low labor caps that leave you paying the difference out of pocket — price alone does not fix a bad claims desk.",
+          "Our aggregate data cannot tell you whether your unit will file zero claims or three in a year. It only shows what happened across the RV warranty book in 2025.",
+        ],
+      },
+      {
+        heading: "What This Data Does Not Prove",
+        content: [
+          "This analysis does not show that every policyholder saves more than they pay in premium. Plan tiers, deductibles, and usage differ too much for that guarantee.",
+          "We did not break out every component line (engine vs. slide vs. HVAC) in this export — the largest payouts are identified by RV class and paid amount, not by part number. Do not assume every large payout was an engine; coach and chassis systems can stack quickly on Class A units.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Are RV extended warranties worth it?",
+        answer:
+          "Often yes if you cannot absorb a $10,000+ repair — or a major powertrain bill in the $30,000 range — you use the RV heavily, and you choose a provider with a strong claims reputation. Often no if factory warranty still applies, you self-insure easily, or the plan has weak coverage. Our Calendar 2025 data — 1,531 paid RV warranty claims totaling about $2.62M — shows real payouts happen, but not that every owner beats premium math.",
+      },
+      {
+        question: "How was this claims data collected?",
+        answer:
+          "RV Warranty Review analyzed paid RV warranty Case records from the administrator's Salesforce system for Calendar 2025, with a paid date and positive payment amount on each Case. See the methodology section above for full criteria.",
+      },
+      {
+        question: "What is a typical paid RV warranty claim?",
+        answer:
+          "In Calendar 2025, the average paid RV warranty claim in our dataset was about $1,710. Most claims are smaller; a minority over $3,000 drove a large share of total dollars paid — about $1,013,001 across 214 claims above that threshold.",
+      },
+      {
+        question: "Does an RV warranty always pay for itself?",
+        answer:
+          "No. Aggregate data shows frequent paid claims and occasional five-figure payouts, not a guarantee that premium minus claims is positive for every owner. Treat coverage as tail-risk and budget protection, not a sure investment.",
+      },
+    ],
+  },
+  {
     slug: "how-to-compare-rv-warranty-quotes",
     title: "How to Compare Two RV Warranty Quotes Side by Side",
     description:
