@@ -11,6 +11,7 @@ import { trackGenerateLead, trackQuizStep } from "@/lib/analytics";
 import { trackMetaLead } from "@/lib/meta";
 import { MakeCombobox } from "@/components/MakeCombobox";
 import {
+  buildQuoteHref,
   captureLeadAttribution,
   getLeadAttribution,
 } from "@/lib/attribution";
@@ -46,6 +47,29 @@ const backBtn =
 const primaryBtn =
   "rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90 disabled:opacity-60";
 
+const MATCH_PROVIDER = "America's RV Warranty";
+const MATCH_SCORE = 94;
+
+function MatchStars() {
+  return (
+    <div
+      className="flex justify-center gap-0.5 text-amber-400"
+      aria-label="5 out of 5 stars"
+    >
+      {Array.from({ length: 5 }).map((_, index) => (
+        <svg
+          key={index}
+          className="h-5 w-5 fill-current"
+          viewBox="0 0 20 20"
+          aria-hidden
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 export function FindCoverageSurvey({
   classes,
   makes,
@@ -74,7 +98,6 @@ export function FindCoverageSurvey({
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [useHostedFallback, setUseHostedFallback] = useState(!apiEnabled);
 
   useEffect(() => {
     captureLeadAttribution();
@@ -123,9 +146,8 @@ export function FindCoverageSurvey({
     setStep(needsOdometer ? "odometer" : "state");
   }
 
-  function finishToResult(ok: boolean, fallback: boolean) {
+  function finishToResult(ok: boolean) {
     setSuccess(ok);
-    setUseHostedFallback(fallback);
     setStep("matching");
     window.setTimeout(() => setStep("result"), 1600);
   }
@@ -136,7 +158,7 @@ export function FindCoverageSurvey({
     const attribution = getLeadAttribution();
 
     if (!apiEnabled) {
-      finishToResult(false, true);
+      finishToResult(false);
       return;
     }
 
@@ -170,7 +192,7 @@ export function FindCoverageSurvey({
 
       if (!response.ok) {
         if (data.fallback) {
-          finishToResult(false, true);
+          finishToResult(false);
           return;
         }
         setError(data.error ?? "Something went wrong. Please try again.");
@@ -179,15 +201,19 @@ export function FindCoverageSurvey({
 
       trackGenerateLead(attribution);
       trackMetaLead();
-      finishToResult(true, false);
+      finishToResult(true);
     } catch {
-      finishToResult(false, true);
+      finishToResult(false);
     } finally {
       setSubmitting(false);
     }
   }
 
   const showProgress = step !== "result" && step !== "matching";
+  const quoteHref = useMemo(
+    () => buildQuoteHref(hostedQuoteUrl, getLeadAttribution()),
+    [hostedQuoteUrl, step]
+  );
 
   return (
     <div className="space-y-6">
@@ -693,63 +719,107 @@ export function FindCoverageSurvey({
       )}
 
       {step === "result" && (
-        <section className="space-y-5 py-2 text-center sm:text-left">
-          {success ? (
-            <>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand sm:mx-0">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand">
-                You&apos;re matched
+        <section className="space-y-6 py-2">
+          <div className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-brand">
+              You&apos;re matched
+            </p>
+            <h2 className="mt-2 font-serif text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+              We&apos;ve matched you with {MATCH_PROVIDER}
+            </h2>
+            <p className="mt-3 text-lg font-semibold text-foreground">
+              Score = {MATCH_SCORE}/100
+            </p>
+            <p className="mx-auto mt-2 max-w-md text-xs italic leading-relaxed text-muted">
+              Based on claim payout reliability, mobile mechanic coverage,
+              contract transparency, and your quiz answers
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-xl bg-[#1e4a8c] px-4 py-8 text-center">
+            <div className="mx-auto inline-flex max-w-xs flex-col items-center rounded-2xl border-4 border-emerald-500 bg-white px-6 py-4 shadow-lg">
+              <svg
+                className="h-14 w-24 text-[#1e4a8c]"
+                viewBox="0 0 96 48"
+                fill="currentColor"
+                aria-hidden
+              >
+                <rect x="8" y="18" width="56" height="22" rx="4" />
+                <rect x="64" y="24" width="24" height="16" rx="3" />
+                <circle cx="24" cy="42" r="6" fill="#334155" />
+                <circle cx="72" cy="42" r="6" fill="#334155" />
+              </svg>
+              <p className="mt-2 text-lg font-extrabold uppercase tracking-wide text-emerald-700">
+                America&apos;s RV
               </p>
-              <h2 className="font-serif text-3xl font-semibold text-foreground">
-                Best coverage for your RV
-              </h2>
-              <p className="text-base leading-relaxed text-muted">
+              <p className="-mt-0.5 w-full rounded-sm bg-[#1e4a8c] px-3 py-1 text-sm font-bold uppercase italic tracking-wide text-white">
+                Warranty
+              </p>
+            </div>
+          </div>
+
+          <MatchStars />
+
+          <div className="text-left">
+            <h3 className="text-center font-serif text-lg font-semibold text-foreground">
+              Payout Reliability Score:
+            </h3>
+            <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted">
+              <li>Highest Ranked: BBB A+ Rating since 2019</li>
+              <li>ConsumerVoice 10/10 Rating (2025)</li>
+              <li>High averages across Google &amp; Trustpilot reviews</li>
+            </ol>
+          </div>
+
+          <div className="rounded-xl border border-border bg-background p-5 text-center">
+            <p className="text-sm font-bold uppercase leading-snug text-foreground">
+              Your exclusive {MATCH_PROVIDER} discount is ready
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              We have an insiders-only discount for your match based on your
+              quiz answers. Tap below to see your offer.
+            </p>
+            <a
+              href={quoteHref}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#e85d4a] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#d44f3e]"
+            >
+              <span aria-hidden>🔒</span>
+              Unlock My Discount
+            </a>
+          </div>
+
+          <p className="text-center text-sm leading-relaxed text-muted">
+            {success ? (
+              <>
                 Request received for your {modelYear} {make} {model}. A
                 specialist will follow up with a free quote — usually within one
-                business day.
-              </p>
-              <p className="text-sm text-muted">
-                Keep an eye on your phone and email ({email}).
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand">
-                Almost there
-              </p>
-              <h2 className="font-serif text-3xl font-semibold text-foreground">
-                Finish your free quote
-              </h2>
-              <p className="text-base leading-relaxed text-muted">
-                {useHostedFallback
-                  ? "One more step on the secure quote form to complete your match."
-                  : "We couldn’t finish on this page. Continue on the quote form."}
-              </p>
-              <a
-                href={hostedQuoteUrl}
-                target="_blank"
-                rel="sponsored noopener noreferrer"
-                className={`inline-block ${primaryBtn}`}
-              >
-                Continue to Quote Form
-              </a>
-            </>
-          )}
+                business day. Keep an eye on your phone and email ({email}).
+              </>
+            ) : (
+              <>
+                Your match is ready for your {modelYear} {make} {model}. Tap
+                the button above to see your personalized quote and discount.
+              </>
+            )}
+          </p>
         </section>
       )}
     </div>

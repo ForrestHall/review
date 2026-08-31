@@ -22,7 +22,7 @@ export default async function FindCoveragePage() {
 
   return (
     <div className="relative min-h-[70vh] bg-gradient-to-b from-brand/[0.06] via-background to-background">
-      <div className="mx-auto max-w-lg px-4 py-8 sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-xl px-4 py-8 sm:px-6 sm:py-12">
         <header className="mb-8 text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-brand">
             Free quote · No obligation
