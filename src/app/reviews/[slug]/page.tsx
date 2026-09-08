@@ -13,6 +13,7 @@ import { getComparisonsForCompany } from "@/data/comparisons";
 import { companies, getCompaniesSorted, getCompany } from "@/data/companies";
 import { UserReviewSection } from "@/components/UserReviews";
 import { FindCoverageLink, QuoteLink } from "@/components/AttributionLinks";
+import { getReviewSeo } from "@/lib/review-seo";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { getUserReviewStats, getUserReviews } from "@/lib/user-reviews";
@@ -33,9 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const company = getCompany(slug);
   if (!company) return {};
 
+  const seo = getReviewSeo(company);
+
   return buildMetadata({
-    title: `${company.name} Review ${SITE.year}`,
-    description: `${company.name} review: rated ${company.rating}/10 from ${company.reviewCount.toLocaleString()} reviews. ${company.summary}`,
+    title: seo.title,
+    description: seo.description,
     path: `/reviews/${slug}`,
     ogType: "article",
   });
@@ -413,6 +416,26 @@ export default async function ReviewPage({ params }: Props) {
         </section>
 
         <QuizMatchCta />
+
+        <RelatedLinks
+          title="More Reviews & Rankings"
+          links={[
+            {
+              href: "/blog/best-rv-extended-warranty-reviews",
+              title: "Best RV Extended Warranty Reviews (2026)",
+              description: "All 9 companies ranked with ratings and links to full reviews",
+            },
+            ...(company.slug === "good-sam-esp"
+              ? [
+                  {
+                    href: "/blog/good-sam-esp-alternatives",
+                    title: "Good Sam ESP Alternatives",
+                    description: "Other providers worth comparing before you buy",
+                  },
+                ]
+              : []),
+          ]}
+        />
 
         <RelatedLinks
           title="Compare With Other Providers"

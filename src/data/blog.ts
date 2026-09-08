@@ -365,10 +365,10 @@ export const blogPosts: BlogPost[] = [
     readTime: 9,
     reviewedBy: "jennifer-walsh",
     relatedLinks: [
+      { href: "/blog/best-rv-extended-warranty-reviews", title: "Best RV Extended Warranty Reviews (2026)" },
       { href: "/how-we-review", title: "How We Review (Methodology)" },
       { href: "/blog/red-flags-rv-warranty-sales-call", title: "7 Red Flags on Warranty Sales Calls" },
       { href: "/blog/what-to-do-when-your-rv-warranty-claim-is-denied", title: "What to Do When Your Claim Is Denied" },
-      { href: "/#compare", title: "Best RV Warranty Companies" },
     ],
     sections: [
       {

@@ -116,7 +116,14 @@ export default function HomePage() {
           </h2>
           <p className="mt-2 text-muted">
             Compare the top {companies.length} RV warranty providers based on
-            user ratings and reviews.
+            user ratings and reviews.{" "}
+            <Link
+              href="/blog/best-rv-extended-warranty-reviews"
+              className="font-semibold text-brand hover:underline"
+            >
+              See all nine ranked with full reviews
+            </Link>
+            .
           </p>
         </div>
 

@@ -47,7 +47,7 @@ export const companies: CompanyReview[] = [
       "https://www.americasrvwarranty.com/quote/source/rvr/tracking_num/770-727-0028",
     ctaLabel: "Get Quote",
     publishedAt: "2025-10-01",
-    updatedAt: "2026-03-01",
+    updatedAt: "2026-09-08",
     reviewedBy: "michael-torres",
     faqs: [
       {
@@ -108,7 +108,7 @@ export const companies: CompanyReview[] = [
     deductible: "$100–$500",
     eligibility: "Up to 15 years / 100k+ miles",
     publishedAt: "2025-10-05",
-    updatedAt: "2026-03-01",
+    updatedAt: "2026-09-08",
     reviewedBy: "michael-torres",
     faqs: [
       {
@@ -326,7 +326,7 @@ export const companies: CompanyReview[] = [
     deductible: "$100–$250",
     eligibility: "Up to 15 years",
     publishedAt: "2025-10-18",
-    updatedAt: "2026-02-01",
+    updatedAt: "2026-09-08",
     reviewedBy: "michael-torres",
     faqs: [
       {
@@ -380,7 +380,7 @@ export const companies: CompanyReview[] = [
     deductible: "$100–$200",
     eligibility: "Up to 12 years (varies by dealer)",
     publishedAt: "2025-11-01",
-    updatedAt: "2026-03-01",
+    updatedAt: "2026-09-08",
     reviewedBy: "michael-torres",
     faqs: [
       {
