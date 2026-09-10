@@ -43,6 +43,21 @@ export function trackGenerateLead(attribution: Ga4LeadAttribution | null) {
   });
 }
 
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() ?? "AW-880590315";
+const GOOGLE_ADS_LEAD_LABEL =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL?.trim();
+
+/**
+ * Google Ads conversion on quiz submit. Create the action in Google Ads, then set
+ * NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL so remarketing lists can exclude converters.
+ */
+export function trackGoogleAdsLead() {
+  if (!GOOGLE_ADS_ID || !GOOGLE_ADS_LEAD_LABEL) return;
+  callGtag("event", "conversion", {
+    send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_LEAD_LABEL}`,
+  });
+}
+
 /** Fires when the exit-intent modal opens (once per session). */
 export function trackExitIntentShow() {
   callGtag("event", "exit_intent_show", {

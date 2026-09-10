@@ -160,6 +160,8 @@ Do **not** export raw email/phone to BigQuery without a privacy review.
 | Variable | Required for | Where |
 |----------|--------------|-------|
 | `NEXT_PUBLIC_GA_ID` | GA4 (defaults to G-RMSCHQPTV5) | Railway |
+| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Google Ads remarketing tag (defaults to AW-880590315) | Railway |
+| `NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL` | Exclude quiz submitters from remarketing lists | Railway |
 | `ARW_API_TOKEN` | On-site leads + `generate_lead` events | Railway |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | GSC HTML verification | Railway |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta ads only (not Looker) | Railway |
@@ -237,6 +239,25 @@ NEXT_PUBLIC_META_PIXEL_ID=1086705430359596
 - **Lead** — fires on successful quiz submit (`trackMetaLead()` in `FindCoverageSurvey.tsx`)
 
 Verify in [Meta Events Manager](https://business.facebook.com/events_manager) → Test Events while submitting a test lead on `/find-coverage`.
+
+### Google Ads remarketing
+
+The global site tag **`AW-880590315`** loads on every page via `Analytics.tsx` (alongside GA4). This builds your remarketing pool in Google Ads.
+
+**To target visitors who did *not* submit the quiz:**
+
+1. In [Google Ads](https://ads.google.com) → **Goals → Conversions → New conversion action** → **Website** → create **Lead submit** (or import `generate_lead` from GA4 if linked).
+2. Copy the conversion **label** (the part after `/` in `AW-880590315/AbCdEfGh`).
+3. Set on Railway:
+   ```
+   NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL=your_label_here
+   ```
+4. Redeploy. Successful quiz submits fire `trackGoogleAdsLead()` → Google Ads conversion.
+5. **Audience manager → New segment** → **Website visitors** who visited pages but **did not convert** on your Lead submit action.
+
+Code: `src/lib/analytics.ts` (`trackGoogleAdsLead`), `src/components/FindCoverageSurvey.tsx` (fires on successful `/api/arw-lead`).
+
+Verify the tag: View page source on production and confirm `AW-880590315` in the gtag config block.
 
 ---
 

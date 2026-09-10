@@ -17,6 +17,7 @@ const SITE_URL = (process.env.SITE_URL ?? "https://www.rvwarrantyreview.com").re
   ""
 );
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-RMSCHQPTV5";
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "AW-880590315";
 
 const paths = ["/", "/find-coverage"];
 
@@ -35,12 +36,20 @@ for (const path of paths) {
 
   const hasGtagLoader = html.includes("googletagmanager.com/gtag/js");
   const hasGaConfig = html.includes(`gtag('config', '${GA_ID}'`) || html.includes(GA_ID);
+  const hasAdsConfig =
+    html.includes(`gtag('config', '${GOOGLE_ADS_ID}'`) || html.includes(GOOGLE_ADS_ID);
 
   if (!hasGtagLoader || !hasGaConfig) {
     console.error(`FAIL ${url} — GA4 tag missing (expected ${GA_ID})`);
     failed = true;
   } else {
     console.log(`OK   ${url} — GA4 ${GA_ID} present`);
+  }
+
+  if (!hasAdsConfig) {
+    console.warn(`WARN ${url} — Google Ads tag missing (expected ${GOOGLE_ADS_ID})`);
+  } else {
+    console.log(`OK   ${url} — Google Ads ${GOOGLE_ADS_ID} present`);
   }
 }
 

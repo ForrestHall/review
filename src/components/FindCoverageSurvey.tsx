@@ -7,7 +7,11 @@ import {
   US_STATES,
   type ArwOption,
 } from "@/lib/arw";
-import { trackGenerateLead, trackQuizStep } from "@/lib/analytics";
+import {
+  trackGenerateLead,
+  trackGoogleAdsLead,
+  trackQuizStep,
+} from "@/lib/analytics";
 import { trackMetaLead } from "@/lib/meta";
 import { MakeCombobox } from "@/components/MakeCombobox";
 import {
@@ -200,6 +204,7 @@ export function FindCoverageSurvey({
       }
 
       trackGenerateLead(attribution);
+      trackGoogleAdsLead();
       trackMetaLead();
       finishToResult(true);
     } catch {

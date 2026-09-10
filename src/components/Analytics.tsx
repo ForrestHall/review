@@ -1,22 +1,31 @@
 import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-RMSCHQPTV5";
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() ?? "AW-880590315";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
 
+function buildGtagInit() {
+  const configs: string[] = ["gtag('js', new Date());"];
+  if (GA_ID) configs.push(`gtag('config', '${GA_ID}');`);
+  if (GOOGLE_ADS_ID) configs.push(`gtag('config', '${GOOGLE_ADS_ID}');`);
+  return `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+${configs.join("\n")}`;
+}
+
 export function Analytics() {
+  const gtagLoaderId = GA_ID || GOOGLE_ADS_ID;
+
   return (
     <>
-      {GA_ID ? (
+      {gtagLoaderId ? (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtagLoaderId}`}
             strategy="afterInteractive"
           />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
+          <Script id="gtag-init" strategy="afterInteractive">
+            {buildGtagInit()}
           </Script>
         </>
       ) : null}
