@@ -52,7 +52,7 @@ export function PhoneOfferScreen({
     <section className="space-y-6 py-2">
       <div className="text-center">
         <span className="inline-block rounded-full bg-[#1e4a8c] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
-          RV Warranty Insider Member
+          RV Warranty Review
         </span>
         <h2 className="mt-5 font-serif text-2xl font-bold leading-tight text-foreground sm:text-3xl">
           {displayName}, your RV warranty discount is{" "}

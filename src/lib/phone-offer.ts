@@ -4,7 +4,7 @@ export const OFFER_UNLOCK_STORAGE_KEY = "rvr_offer_unlock_at";
 
 const DEFAULT_PHONE = "8773632783";
 const DEFAULT_OFFER_AMOUNT = "200";
-const DEFAULT_OFFER_PHRASE = "RV Warranty Insider";
+const DEFAULT_OFFER_PHRASE = "RV Warranty Review";
 
 export function getPhoneOfferConfig() {
   const digits =

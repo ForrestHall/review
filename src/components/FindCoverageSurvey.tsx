@@ -796,8 +796,8 @@ export function FindCoverageSurvey({
               Your exclusive {MATCH_PROVIDER} phone offer is ready
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
-              We have an insiders-only offer for your match based on your quiz
-              answers. Tap below to unlock your phone-only discount.
+              We have an exclusive phone-only offer for your match based on your
+              quiz answers. Tap below to unlock your discount.
             </p>
             <button
               type="button"
