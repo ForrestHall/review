@@ -11,7 +11,10 @@ import {
   trackGenerateLead,
   trackGoogleAdsLead,
   trackQuizStep,
+  trackUnlockOfferClick,
 } from "@/lib/analytics";
+import { PhoneOfferScreen } from "@/components/PhoneOfferScreen";
+import { writeOfferUnlockAt } from "@/lib/phone-offer";
 import { trackMetaLead } from "@/lib/meta";
 import { MakeCombobox } from "@/components/MakeCombobox";
 import {
@@ -37,7 +40,8 @@ type StepId =
   | "price"
   | "contact"
   | "matching"
-  | "result";
+  | "result"
+  | "offer";
 
 const inputClass =
   "mt-1 w-full rounded-lg border border-border bg-background px-3 py-3 text-base text-foreground outline-none focus:border-brand focus:ring-1 focus:ring-brand sm:text-sm";
@@ -111,6 +115,12 @@ export function FindCoverageSurvey({
     trackQuizStep(step, getLeadAttribution());
   }, [step]);
 
+  function openPhoneOffer() {
+    writeOfferUnlockAt();
+    trackUnlockOfferClick(getLeadAttribution());
+    setStep("offer");
+  }
+
   const needsOdometer = rvClass ? isMotorhomeClass(rvClass) : false;
 
   const steps = useMemo((): StepId[] => {
@@ -121,17 +131,17 @@ export function FindCoverageSurvey({
   }, [needsOdometer]);
 
   const progressSteps = steps.filter(
-    (s): s is Exclude<StepId, "matching" | "result"> =>
-      s !== "matching" && s !== "result"
+    (s): s is Exclude<StepId, "matching" | "result" | "offer"> =>
+      s !== "matching" && s !== "result" && s !== "offer"
   );
   const progressIndex = Math.max(
     0,
     progressSteps.indexOf(
-      step as Exclude<StepId, "matching" | "result">
+      step as Exclude<StepId, "matching" | "result" | "offer">
     )
   );
   const progress =
-    step === "result" || step === "matching"
+    step === "result" || step === "matching" || step === "offer"
       ? 100
       : Math.round(((progressIndex + 1) / progressSteps.length) * 100);
 
@@ -214,7 +224,8 @@ export function FindCoverageSurvey({
     }
   }
 
-  const showProgress = step !== "result" && step !== "matching";
+  const showProgress =
+    step !== "result" && step !== "matching" && step !== "offer";
   const quoteHref = useMemo(
     () => buildQuoteHref(hostedQuoteUrl, getLeadAttribution()),
     [hostedQuoteUrl, step]
@@ -782,21 +793,20 @@ export function FindCoverageSurvey({
 
           <div className="rounded-xl border border-border bg-background p-5 text-center">
             <p className="text-sm font-bold uppercase leading-snug text-foreground">
-              Your exclusive {MATCH_PROVIDER} discount is ready
+              Your exclusive {MATCH_PROVIDER} phone offer is ready
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
-              We have an insiders-only discount for your match based on your
-              quiz answers. Tap below to see your offer.
+              We have an insiders-only offer for your match based on your quiz
+              answers. Tap below to unlock your phone-only discount.
             </p>
-            <a
-              href={quoteHref}
-              target="_blank"
-              rel="sponsored noopener noreferrer"
+            <button
+              type="button"
+              onClick={openPhoneOffer}
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#e85d4a] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#d44f3e]"
             >
               <span aria-hidden>🔒</span>
               Unlock My Discount
-            </a>
+            </button>
           </div>
 
           <p className="text-center text-sm leading-relaxed text-muted">
@@ -809,11 +819,32 @@ export function FindCoverageSurvey({
             ) : (
               <>
                 Your match is ready for your {modelYear} {make} {model}. Tap
-                the button above to see your personalized quote and discount.
+                the button above to unlock your phone-only offer.
               </>
             )}
           </p>
         </section>
+      )}
+
+      {step === "offer" && (
+        <PhoneOfferScreen
+          firstName={firstName}
+          onlineQuoteHref={quoteHref}
+          footerNote={
+            success ? (
+              <>
+                Request received for your {modelYear} {make} {model}. Call now
+                to claim your discount, or wait for a specialist — usually
+                within one business day — at {email}.
+              </>
+            ) : (
+              <>
+                Your match is ready for your {modelYear} {make} {model}. Call
+                now to claim your phone-only discount.
+              </>
+            )
+          }
+        />
       )}
     </div>
   );

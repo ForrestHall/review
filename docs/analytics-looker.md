@@ -40,8 +40,10 @@ Confirms the GA4 tag (`G-RMSCHQPTV5`) is on `/` and `/find-coverage`.
 
 | Event | When | Key parameters |
 |-------|------|----------------|
-| `quiz_step` | Each funnel step | `quiz_step`, `method` |
+| `quiz_step` | Each funnel step (includes `offer`) | `quiz_step`, `method` |
 | `generate_lead` | Successful `/api/arw-lead` only | `method`, UTM params, `gclid`, `fbclid` |
+| `unlock_offer_click` | User taps Unlock on match result | `method`, UTM params |
+| `phone_call_click` | User taps tel CTA on phone offer screen | `method`, `phone_number`, UTM params |
 | `exit_intent_show` | Exit-intent modal opens (once/session) | `method` |
 | `exit_intent_click` | User clicks Get Matched in modal | `method`, `cta_medium` |
 

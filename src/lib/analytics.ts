@@ -72,3 +72,25 @@ export function trackExitIntentClick(ctaMedium: string) {
     cta_medium: ctaMedium,
   });
 }
+
+/** User clicked Unlock on the match result → phone offer screen. */
+export function trackUnlockOfferClick(
+  attribution: Ga4LeadAttribution | null = null
+) {
+  callGtag("event", "unlock_offer_click", {
+    method: "find_coverage",
+    ...(attribution ?? {}),
+  });
+}
+
+/** User tapped the tel: CTA on the phone offer screen. */
+export function trackPhoneOfferCallClick(
+  phoneNumber: string,
+  attribution: Ga4LeadAttribution | null = null
+) {
+  callGtag("event", "phone_call_click", {
+    method: "find_coverage",
+    phone_number: phoneNumber.replace(/\D/g, ""),
+    ...(attribution ?? {}),
+  });
+}

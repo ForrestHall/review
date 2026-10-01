@@ -55,8 +55,10 @@ for (const path of paths) {
 
 console.log("");
 console.log("Event names emitted by the quiz (see src/lib/analytics.ts):");
-console.log("  • quiz_step      — each funnel step (param: quiz_step)");
-console.log("  • generate_lead  — successful /api/arw-lead only (UTM + gclid params)");
+console.log("  • quiz_step           — each funnel step (param: quiz_step, includes offer)");
+console.log("  • generate_lead       — successful /api/arw-lead only (UTM + gclid params)");
+console.log("  • unlock_offer_click  — Unlock My Discount on match result");
+console.log("  • phone_call_click    — tel CTA on phone offer screen");
 console.log("");
 console.log("Register these as GA4 custom dimensions (Event scope) for Looker Studio:");
 console.log("  quiz_step, utm_source, utm_medium, utm_campaign, utm_content, utm_term, gclid, fbclid");
